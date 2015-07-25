@@ -3661,13 +3661,13 @@ var d3 = {
 
 var settings = require("./defaults.js");
 
-/**
-* D3plus custom Color element.
-*
-* @class Color
-* @constructor
-*/
 var Color = (function () {
+
+  /**
+      @param {color|String|Number|true|false|null|undefined} color
+      @param {object} [defaults = src/defaults.js]
+  */
+
   function Color(color, defaults) {
     _classCallCheck(this, Color);
 
@@ -3697,7 +3697,11 @@ var Color = (function () {
     }
   }
 
-  // Mixes a second color, returning a new Color object.
+  /**
+      Mixes a second color, returning a new Color object.
+      @param {Color} c2 - The color to be mixed in. If it is not a d3plus-color Object, then it will be parsed into one.
+      @returns {Color}
+  */
 
   _createClass(Color, [{
     key: "add",
@@ -3724,28 +3728,37 @@ var Color = (function () {
       // return new Color("hsla(" + [h, s * 100 + "%", l * 100 + "%", a].join(",") + ")");
     }
 
-    // Returns true if the color is displayable.
+    /**
+        Returns true if the color is displayable.
+        @returns {Boolean}
+    */
   }, {
     key: "displayable",
     value: function displayable() {
       return this.d3.displayable();
     }
 
-    // Returns the hexidecimal value.
+    /**
+        Returns the hexidecimal value.
+        @returns {String}
+    */
   }, {
     key: "hex",
     value: function hex() {
       return this.toString();
     }
 
-    // Returns the D3 hsl object.
+    /** Returns the D3 hsl object. */
   }, {
     key: "hsl",
     value: function hsl() {
       return d3.color.hsl(this.d3);
     }
 
-    // Darkens the color if it is too light to appear on white.
+    /**
+        Darkens the color if it is too light to appear on white.
+        @returns {Color}
+    */
   }, {
     key: "legible",
     value: function legible() {
@@ -3759,7 +3772,10 @@ var Color = (function () {
       return new Color(c.toString());
     }
 
-    // Lightens the color while also reducing the saturation.
+    /**
+        Lightens the color while also reducing the saturation.
+        @returns {Color}
+    */
   }, {
     key: "lighter",
     value: function lighter(i) {
@@ -3788,14 +3804,18 @@ var Color = (function () {
       // }
     }
 
-    // Returns the D3 rgb object.
+    /** Returns the D3 rgb object. */
   }, {
     key: "rgb",
     value: function rgb() {
       return this.d3;
     }
 
-    // Subtracts a second color, returning a new Color object.
+    /**
+        Subtracts a second color, returning a new Color object.
+        @param {Color} c2 - The color to be subtracted out. If it is not a d3plus-color Object, then it will be parsed into one.
+        @returns {Color}
+    */
   }, {
     key: "subtract",
     value: function subtract(c2) {
@@ -3821,8 +3841,10 @@ var Color = (function () {
       // return new Color("hsla(" + [h, s * 100 + "%", l * 100 + "%", a].join(",") + ")");
     }
 
-    // Analyzes the color and determines an appropriate color for text to be
-    // placed on top of the color.
+    /**
+        Analyzes the color and determines an appropriate color for text to be placed on top of the color.
+        @returns {Color}
+    */
   }, {
     key: "text",
     value: function text() {
@@ -3835,7 +3857,10 @@ var Color = (function () {
       return new Color(c);
     }
 
-    // Pass-through method for D3 toString function.
+    /**
+        Pass-through method for D3 toString function.
+        @returns {String}
+    */
   }, {
     key: "toString",
     value: function toString() {

@@ -33,6 +33,7 @@
     "browserify": "^11.0.0",
     "eslint": "^0.24.1",
     "faucet": "0.0.1",
+    "jsdoc-to-markdown": "^1.1.1",
     "livereloadify": "^2.0.0",
     "node-static": "^0.7.7",
     "tape": "^4.0.1",
@@ -45,10 +46,11 @@
     ]
   },
   "scripts": {
-    "build": "browserify src/color.js > build/d3plus-color.js & browserify -g uglifyify src/color.js > build/d3plus-color-min.js",
+    "build": "npm test & npm run docs & browserify src/color.js > build/d3plus-color.js & browserify -g uglifyify src/color.js > build/d3plus-color-min.js",
     "dev": "npm run watch & livereloadify / & static -p 4000",
+    "docs": "jsdoc2md 'src/**/*.js' -t README.hbs > README.md",
     "lint": "eslint src/* test/unit/*",
     "test": "npm run lint && babel-node test/**/*.js | faucet",
-    "watch": "watchify --debug -r ./src/color.js:d3plus-color -o build/d3plus-color-dev.js -v"
+    "watch": "watchify -d -r ./src/color.js:d3plus-color -o build/d3plus-color-dev.js -v"
   }
 }
