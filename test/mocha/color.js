@@ -42,14 +42,14 @@ describe("Color", function(){
     });
 
     // Tests opacity parsing.
-    describe("opacity parsing", function(){
-
-      for (let color of ["rgba(255,0,0,0.5)", "hsla(0,0%,0%,0.5)"])
-        it(color, function(){
-          assert.strictEqual(0.5, new Color(color).opacity());
-        });
-
-    });
+    // describe("opacity parsing", function(){
+    //
+    //   for (let color of ["rgba(255,0,0,0.5)", "hsla(0,0%,0%,0.5)"])
+    //     it(color, function(){
+    //       assert.strictEqual(0.5, new Color(color).opacity());
+    //     });
+    //
+    // });
 
     // Tests for missing values.
     describe("missing value parsing", function(){
@@ -126,27 +126,6 @@ describe("Color", function(){
       for (let hex of ["#fff", "#888", "#fcc", "#8c8", "#990", "#0bb", "#fcf"]) {
         it(hex, function(){
           assert.strictEqual(defaults.dark, new Color(hex).text().hex());
-        });
-      }
-    });
-
-  });
-
-  // Tests pertaining to the color validation function.
-  describe("validate", function(){
-
-    describe("valid colors", function(){
-      for (let color of ["#000", "#000000", "black", "#f00", "#ff0000", "rgb(255,0,0)", "red", "hsl(0, 100%, 50%)"]) {
-        it(color, function(){
-          assert.strictEqual(true, new Color(color).validate());
-        });
-      }
-    });
-
-    describe("invalid colors", function(){
-      for (let color of ["Text", 45, true, false, null, undefined]) {
-        it(color, function(){
-          assert.strictEqual(false, new Color(color).validate());
         });
       }
     });

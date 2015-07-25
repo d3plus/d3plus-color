@@ -3674,24 +3674,27 @@ var Color = (function () {
     this.value = color;
     this.defaults = defaults || settings;
 
-    // If the color value is null  or undefined, set to grey.
+    // If the value is null or undefined, set to grey.
     if ([null, undefined].indexOf(color) >= 0) {
       this.color = this.defaults.missing;
     }
-    // Else if the color is true, set to green.
+    // Else if the value is true, set to green.
     else if (color === true) {
         this.color = this.defaults.on;
       }
-      // Else if the color is false, set to red.
+      // Else if the value is false, set to red.
       else if (color === false) {
           this.color = this.defaults.off;
         }
-        // Else if the color is not a valid color string, use the color scale.
-        else if (!this.validate()) {
-            this.color = this.defaults.scale(color);
-          } else if (!this.color) {
-            this.color = color;
-          }
+
+    this.d3 = d3.color.color(this.color || color);
+    // If the value is not a valid color string, use the color scale.
+    if (!this.d3) {
+      this.color = this.defaults.scale(color);
+      this.d3 = d3.color.color(this.color);
+    } else if (!this.color) {
+      this.color = color;
+    }
   }
 
   // Mixes a second color, returning a new Color object.
@@ -3712,12 +3715,20 @@ var Color = (function () {
       }
       var h = (d3.array.min([c1.h, c2.h]) + d / 2) % 360,
           s = c1.s + (c2.s * o2 - c1.s * o1) / 2,
-          l = c1.l + (c2.l * o2 - c1.l * o1) / 2,
-          a = o1 + (o2 - o1) / 2;
+          l = c1.l + (c2.l * o2 - c1.l * o1) / 2;
+      // a = o1 + (o2 - o1) / 2;
       if (h < 0) {
         h = 360 + h;
       }
-      return new Color("hsla(" + [h, s * 100 + "%", l * 100 + "%", a].join(",") + ")");
+      return new Color("hsl(" + [h, s * 100 + "%", l * 100 + "%"].join(",") + ")");
+      // return new Color("hsla(" + [h, s * 100 + "%", l * 100 + "%", a].join(",") + ")");
+    }
+
+    // Returns true if the color is displayable.
+  }, {
+    key: "displayable",
+    value: function displayable() {
+      return this.d3.displayable();
     }
 
     // Returns the hexidecimal value.
@@ -3731,7 +3742,7 @@ var Color = (function () {
   }, {
     key: "hsl",
     value: function hsl() {
-      return this.rgb().hsl();
+      return d3.color.hsl(this.d3);
     }
 
     // Darkens the color if it is too light to appear on white.
@@ -3765,23 +3776,23 @@ var Color = (function () {
   }, {
     key: "opacity",
     value: function opacity() {
-      var c = this.value;
-      if (!c || c.constructor !== String) {
-        return 1;
-      }
-      c = c.replace(RegExp(" ", "g"), "").toLowerCase();
-      if (c.indexOf("hsla(") === 0 || c.indexOf("rgba(") === 0) {
-        return parseFloat(c.split(")")[0].split(",")[3], 10);
-      } else {
-        return 1;
-      }
+      return 1;
+      // var c = this.value;
+      // if (!c || c.constructor !== String) { return 1; }
+      // c = c.replace(RegExp(" ", "g"), "").toLowerCase();
+      // if (c.indexOf("hsla(") === 0 || c.indexOf("rgba(") === 0) {
+      //   return parseFloat(c.split(")")[0].split(",")[3], 10);
+      // }
+      // else {
+      //   return 1;
+      // }
     }
 
     // Returns the D3 rgb object.
   }, {
     key: "rgb",
     value: function rgb() {
-      return d3.color.rgb(this.color);
+      return this.d3;
     }
 
     // Subtracts a second color, returning a new Color object.
@@ -3801,12 +3812,13 @@ var Color = (function () {
       }
       var h = (c1.h - d) % 360,
           s = c1.s - (c2.s * o2 - c1.s * o1) / 2,
-          l = c1.l - (c2.l * o2 - c1.l * o1) / 2,
-          a = o1 - (o2 - o1) / 2;
+          l = c1.l - (c2.l * o2 - c1.l * o1) / 2;
+      // a = o1 - (o2 - o1) / 2;
       if (h < 0) {
         h = 360 + h;
       }
-      return new Color("hsla(" + [h, s * 100 + "%", l * 100 + "%", a].join(",") + ")");
+      return new Color("hsl(" + [h, s * 100 + "%", l * 100 + "%"].join(",") + ")");
+      // return new Color("hsla(" + [h, s * 100 + "%", l * 100 + "%", a].join(",") + ")");
     }
 
     // Analyzes the color and determines an appropriate color for text to be
@@ -3827,49 +3839,7 @@ var Color = (function () {
   }, {
     key: "toString",
     value: function toString() {
-      return this.rgb().toString();
-    }
-
-    // Returns true if the user value is a valid color and not black.
-  }, {
-    key: "validate",
-    value: function validate() {
-
-      var color = this.value;
-      // Returns true if the variable is not a String.
-      if (!color || color.constructor !== String) {
-        return false;
-      }
-      // Removes spaces and capitals if variable is a string.
-      else {
-          color = color.replace(RegExp(" ", "g"), "").toLowerCase();
-        }
-
-      var black;
-      if (color.indexOf("hsl") === 0 || color.indexOf("rgb") === 0) {
-
-        var values = color.split("(")[1].split(",").slice(0, 3).map(function (n) {
-          return parseFloat(n, 10);
-        });
-
-        // Checks luminosity if variable is hsl or hsla.
-        if (color.indexOf("hsl") === 0) {
-          black = values[2] === 0;
-          color = "hsl(" + values.join(",") + ")";
-          this.color = color;
-        }
-        // Variable is black if the sum of all 3 rgb color channels is 0.
-        else {
-            black = d3.array.sum(values) === 0;
-            color = "rgb(" + values.join(",") + ")";
-            this.color = color;
-          }
-      } else {
-        black = ["black", "#000", "#000000"].indexOf(color) >= 0;
-      }
-
-      // Compares variable to name and hex versions of black.
-      return d3.color.rgb(color).toString() !== "#000000" || black;
+      return this.d3.toString();
     }
   }]);
 
