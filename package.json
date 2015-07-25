@@ -28,13 +28,13 @@
     "d3-scale": "^0.1.1"
   },
   "devDependencies": {
+    "babel": "^5.8.5",
     "babel-eslint": "^3.1.26",
     "browserify": "^11.0.0",
     "eslint": "^0.24.1",
     "livereloadify": "^2.0.0",
-    "mocha": "^2.2.5",
-    "mocha-traceur": "^2.1.0",
     "node-static": "^0.7.7",
+    "tape": "^4.0.1",
     "uglifyify": "^3.0.1",
     "watchify": "^3.3.0"
   },
@@ -46,9 +46,8 @@
   "scripts": {
     "build": "browserify src/color.js > build/d3plus-color.js & browserify -g uglifyify src/color.js > build/d3plus-color-min.js",
     "dev": "npm run watch & livereloadify / & static -p 4000",
-    "lint": "eslint src/* test/mocha/*",
-    "mocha": "mocha --recursive --compilers js:mocha-traceur test/mocha",
-    "test": "npm run lint && npm run mocha",
+    "lint": "eslint src/* test/unit/*",
+    "test": "npm run lint && babel-node test/**/*.js | faucet",
     "watch": "watchify --debug -r ./src/color.js:d3plus-color -o build/d3plus-color-dev.js -v"
   }
 }
