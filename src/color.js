@@ -5,7 +5,7 @@ var d3 = {
 
 var settings = require("./defaults.js");
 
-class Color {
+var Color = class {
 
   /**
       @param {Color|String|Number|true|false|null|undefined} color
@@ -166,6 +166,6 @@ class Color {
     return this.d3.toString();
   }
 
-}
+};
 
 module.exports = Color;
