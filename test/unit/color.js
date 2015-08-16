@@ -1,5 +1,5 @@
 var tape = require("tape"),
-    Color = require("../../src/color.js"),
+    Color = require("../../src/Color.js"),
     defaults = require("../../src/defaults.js");
 
 tape("hex parsing", function(test){

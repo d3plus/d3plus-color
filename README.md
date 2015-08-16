@@ -24,7 +24,7 @@
 
 | Param | Type | Default |
 | --- | --- | --- |
-| color | <code>color</code> &#124; <code>String</code> &#124; <code>Number</code> &#124; <code>true</code> &#124; <code>false</code> &#124; <code>null</code> &#124; <code>undefined</code> |  | 
+| color | <code>[Color](#Color)</code> &#124; <code>String</code> &#124; <code>Number</code> &#124; <code>true</code> &#124; <code>false</code> &#124; <code>null</code> &#124; <code>undefined</code> |  | 
 | [defaults] | <code>object</code> | <code>src/defaults.js</code> | 
 
 <a name="Color+add"></a>

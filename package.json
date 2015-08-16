@@ -2,7 +2,7 @@
   "name": "d3plus-color",
   "version": "0.1.0",
   "description": "Color functions that extent the ability of d3-color.",
-  "main": "src/color.js",
+  "main": "src/Color.js",
   "license": "MIT",
   "homepage": "http://www.d3plus.org",
   "repository": {
@@ -46,11 +46,11 @@
     ]
   },
   "scripts": {
-    "build": "npm test & npm run docs & browserify src/color.js > build/d3plus-color.js & browserify -g uglifyify src/color.js > build/d3plus-color-min.js",
+    "build": "npm test & npm run docs & browserify src/Color.js > build/d3plus-Color.js & browserify -g uglifyify src/Color.js > build/d3plus-color-min.js",
     "dev": "npm run watch & livereloadify / & static -p 4000",
     "docs": "jsdoc2md 'src/**/*.js' -t README.hbs > README.md",
     "lint": "eslint src/* test/unit/*",
     "test": "npm run lint && babel-node test/**/*.js | faucet",
-    "watch": "watchify -d -r ./src/color.js:d3plus-color -o build/d3plus-color-dev.js -v"
+    "watch": "watchify -d -r ./src/Color.js:d3plus-color -o build/d3plus-color-dev.js -v"
   }
 }
