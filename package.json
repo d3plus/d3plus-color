@@ -1,8 +1,8 @@
 {
   "name": "d3plus-color",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Color functions that extent the ability of d3-color.",
-  "main": "src/Color.js",
+  "main": "lib/Color.js",
   "license": "MIT",
   "homepage": "http://www.d3plus.org",
   "repository": {
