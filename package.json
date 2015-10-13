@@ -46,10 +46,12 @@
     ]
   },
   "scripts": {
-    "build": "npm test & npm run docs & browserify src/Color.js > build/d3plus-Color.js & browserify -g uglifyify src/Color.js > build/d3plus-color-min.js",
+    "build": "browserify src/Color.js > build/d3plus-Color.js && browserify -g uglifyify src/Color.js > build/d3plus-color-min.js",
+    "compile": "npm test && npm run docs && npm run build && babel -d lib/ src/",
     "dev": "npm run watch & livereloadify / & static -p 4000",
     "docs": "jsdoc2md 'src/**/*.js' -t README.hbs > README.md",
     "lint": "eslint src/* test/unit/*",
+    "prepublish": "npm run compile",
     "test": "npm run lint && babel-node test/**/*.js | faucet",
     "watch": "watchify -d -r ./src/Color.js:d3plus-color -o build/d3plus-color-dev.js -v"
   }

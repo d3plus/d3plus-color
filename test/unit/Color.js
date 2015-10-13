@@ -35,7 +35,6 @@ tape("parsing null values to grey", function(test){
   test.end();
 });
 
-// Tests true/false booleans.
 tape("parsing booleans to red/green", function(test){
   test.equal(defaults.on, new Color(true).hex(), "true");
   test.equal(defaults.off, new Color(false).hex(), "false");

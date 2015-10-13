@@ -3661,11 +3661,17 @@ var d3 = {
 
 var settings = require("./defaults.js");
 
+/**
+  Color functions that extent the ability of d3-color.
+*/
+
 var Color = (function () {
 
   /**
-      @param {color|String|Number|true|false|null|undefined} color
+      @param {Color|String|Number|true|false|null|undefined} color
       @param {object} [defaults = src/defaults.js]
+      @property {} value The "color" parameter passed to the constructor.
+      @property {} color The inferred color based on the cons
   */
 
   function Color(color, defaults) {
