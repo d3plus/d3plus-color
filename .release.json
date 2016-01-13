@@ -4,7 +4,6 @@
   "tagName": "v%s",
   "tagAnnotation": "release v%s",
   "verbose": true,
-  "non-interactive": true,
   "github": {
     "release": true,
     "releaseName": "v%s"
