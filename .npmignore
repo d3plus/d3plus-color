@@ -1,3 +1,4 @@
 build/*.zip
 test/
 .release.json
+.dist/

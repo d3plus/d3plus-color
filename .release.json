@@ -8,6 +8,7 @@
   "dist": {
     "repo": "git@github.com:alexandersimoes/d3plus.git#gh-pages",
     "baseDir": "build",
+    "stageDir": ".dist",
     "files": ["*.js"],
     "pkgFiles": [],
     "afterReleaseCommand": "sudo rm -r .stage"
