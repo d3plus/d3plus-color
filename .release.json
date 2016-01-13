@@ -1,12 +1,10 @@
 {
   "buildCommand": "npm run prepublish",
   "commitMessage": "release %s",
-  "tagAnnotation": "v%s",
+  "tagName": "v%s",
+  "tagAnnotation": "release v%s",
   "non-interactive": true,
   "verbose": true,
-  "src": {
-    "repo": "git@github.com:d3plus/d3plus-color.git"
-  },
   "dist": {
     "repo": "git@github.com:alexandersimoes/d3plus.git#gh-pages",
     "baseDir": "build",
@@ -15,6 +13,7 @@
     "afterReleaseCommand": "sudo rm -r .stage"
   },
   "github": {
+    "release": true,
     "releaseName": "v%s"
   },
   "npm": {
