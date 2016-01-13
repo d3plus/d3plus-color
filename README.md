@@ -5,90 +5,79 @@
 [![Dependency Status](http://img.shields.io/david/d3plus/d3plus-color.svg?style=flat-square)](https://david-dm.org/d3plus/d3plus-color)
 [![Dependency Status](http://img.shields.io/david/dev/d3plus/d3plus-color.svg?style=flat-square)](https://david-dm.org/d3plus/d3plus-color#info=devDependencies)
 
-<a name="Color"></a>
-## Color
-Color functions that extent the ability of d3-color.
+<a name="module_d3plus.color.add(c1, c2[, o1, o2])"></a>
+## d3plus.color.add(c1, c2[, o1, o2]) ⇒ <code>String</code>
+Adds two colors together.
 
-**Kind**: global class  
 
-* [Color](#Color)
-  * [new Color(color, [defaults])](#new_Color_new)
-  * [.add(c2)](#Color+add) ⇒ <code>[Color](#Color)</code>
-  * [.displayable()](#Color+displayable) ⇒ <code>Boolean</code>
-  * [.hex()](#Color+hex) ⇒ <code>String</code>
-  * [.hsl()](#Color+hsl)
-  * [.legible()](#Color+legible) ⇒ <code>[Color](#Color)</code>
-  * [.lighter()](#Color+lighter) ⇒ <code>[Color](#Color)</code>
-  * [.rgb()](#Color+rgb)
-  * [.subtract(c2)](#Color+subtract) ⇒ <code>[Color](#Color)</code>
-  * [.text()](#Color+text) ⇒ <code>[Color](#Color)</code>
-  * [.toString()](#Color+toString) ⇒ <code>String</code>
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| c1 | <code>String</code> |  | The first color, a valid CSS color string. |
+| c2 | <code>String</code> |  | The second color, also a valid CSS color string. |
+| [o1] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
+| [o2] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 
-<a name="new_Color_new"></a>
-### new Color(color, [defaults])
+<a name="module_d3plus.color.assign(c[, u])"></a>
+## d3plus.color.assign(c[, u]) ⇒ <code>String</code>
+Assigns a color to a value using a predefined set of defaults.
 
-| Param | Type | Default |
-| --- | --- | --- |
-| color | <code>[Color](#Color)</code> &#124; <code>String</code> &#124; <code>Number</code> &#124; <code>true</code> &#124; <code>false</code> &#124; <code>null</code> &#124; <code>undefined</code> |  | 
-| [defaults] | <code>object</code> | <code>src/defaults.js</code> | 
 
-<a name="Color+add"></a>
-### color.add(c2) ⇒ <code>[Color](#Color)</code>
-Mixes a second color, returning a new Color object.
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| c | <code>String</code> |  | A valid CSS color string. |
+| [u] | <code>Object</code> | <code>d3plus.color.defaults</code> | An object containing overrides of the default colors. |
 
-**Kind**: instance method of <code>[Color](#Color)</code>  
+<a name="module_d3plus.color.contrast(c[, u])"></a>
+## d3plus.color.contrast(c[, u]) ⇒ <code>String</code>
+A set of default color values used when assigning colors based on data.
 
-| Param | Type | Description |
-| --- | --- | --- |
-| c2 | <code>[Color](#Color)</code> | The color to be mixed in. If it is not a d3plus-color Object, then it will be parsed into one. |
 
-<a name="Color+displayable"></a>
-### color.displayable() ⇒ <code>Boolean</code>
-Returns true if the color is displayable.
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| c | <code>String</code> |  | A valid CSS color string. |
+| [u] | <code>Object</code> | <code>d3plus.color.defaults</code> | An object containing overrides of the default colors. |
 
-**Kind**: instance method of <code>[Color](#Color)</code>  
-<a name="Color+hex"></a>
-### color.hex() ⇒ <code>String</code>
-Returns the hexidecimal value.
+<a name="module_d3plus.color.defaults"></a>
+## d3plus.color.defaults : <code>Object</code>
+A set of default color values used when assigning colors based on data.
 
-**Kind**: instance method of <code>[Color](#Color)</code>  
-<a name="Color+hsl"></a>
-### color.hsl()
-Returns the D3 hsl object.
+| Name | Default | Description |
+|---|---|---|
+| dark | #444444 | Used in the contrast function when the color given is very light. |
+| light | #f7f7f7 | Used in the contrast function when the color given is very dark. |
+| missing | #cccccc | Used in the assign function when the value passed is `null` or `undefined`. |
+| off | #b22200 | Used in the assign function when the value passed is `false`. |
+| on | #224f20 | Used in the assign function when the value passed is `true`. |
+| scale | `scale.ordinal().range([ "#b22200", "#eace3f", "#282f6b", "#b35c1e", "#224f20", "#5f487c", "#759143", "#419391", "#993c88", "#e89c89", "#ffee8d", "#afd5e8", "#f7ba77", "#a5c697", "#c5b5e5", "#d1d392", "#bbefd0", "#e099cf"])` | An ordinal scale used in the assign function for non-valid color strings and numbers. |
 
-**Kind**: instance method of <code>[Color](#Color)</code>  
-<a name="Color+legible"></a>
-### color.legible() ⇒ <code>[Color](#Color)</code>
-Darkens the color if it is too light to appear on white.
+<a name="module_d3plus.color.legible(c)"></a>
+## d3plus.color.legible(c) ⇒ <code>String</code>
+Darkens a color so that it will appear legible on a white background.
 
-**Kind**: instance method of <code>[Color](#Color)</code>  
-<a name="Color+lighter"></a>
-### color.lighter() ⇒ <code>[Color](#Color)</code>
-Lightens the color while also reducing the saturation.
-
-**Kind**: instance method of <code>[Color](#Color)</code>  
-<a name="Color+rgb"></a>
-### color.rgb()
-Returns the D3 rgb object.
-
-**Kind**: instance method of <code>[Color](#Color)</code>  
-<a name="Color+subtract"></a>
-### color.subtract(c2) ⇒ <code>[Color](#Color)</code>
-Subtracts a second color, returning a new Color object.
-
-**Kind**: instance method of <code>[Color](#Color)</code>  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| c2 | <code>[Color](#Color)</code> | The color to be subtracted out. If it is not a d3plus-color Object, then it will be parsed into one. |
+| c | <code>String</code> | A valid CSS color string. |
 
-<a name="Color+text"></a>
-### color.text() ⇒ <code>[Color](#Color)</code>
-Analyzes the color and determines an appropriate color for text to be placed on top of the color.
+<a name="module_d3plus.color.lighter(c[, i])"></a>
+## d3plus.color.lighter(c[, i]) ⇒ <code>String</code>
+Similar to d3.color.brighter, except that this also reduces saturation so that colors don't appear neon.
 
-**Kind**: instance method of <code>[Color](#Color)</code>  
-<a name="Color+toString"></a>
-### color.toString() ⇒ <code>String</code>
-Pass-through method for D3 toString function.
 
-**Kind**: instance method of <code>[Color](#Color)</code>  
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| c | <code>String</code> |  | A valid CSS color string. |
+| [i] | <code>String</code> | <code>0.5</code> | A value from 0 to 1 dictating the strength of the function. |
+
+<a name="module_d3plus.color.subtract(c1, c2[, o1, o2])"></a>
+## d3plus.color.subtract(c1, c2[, o1, o2]) ⇒ <code>String</code>
+Subtracts one color from another.
+
+
+| Param | Type | Default | Description |
+| --- | --- | --- | --- |
+| c1 | <code>String</code> |  | The base color, a valid CSS color string. |
+| c2 | <code>String</code> |  | The color to remove from the base color, also a valid CSS color string. |
+| [o1] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
+| [o2] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
+

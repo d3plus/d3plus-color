@@ -1,0 +1,32 @@
+import {color} from "d3-color";
+import {default as defaults} from "./defaults";
+
+function getColor(k, u) {
+  return k in u ? u[k] : defaults[k];
+}
+
+/**
+    @module {Function} assign
+    @name "d3plus.color.assign(c[, u])"
+    @desc Assigns a color to a value using a predefined set of defaults.
+    @param {String} c A valid CSS color string.
+    @param {Object} [u = d3plus.color.defaults] An object containing overrides of the default colors.
+    @returns {String}
+*/
+export default function(c, u) {
+  if (u === void 0) { u = {}; }
+
+  // If the value is null or undefined, set to grey.
+  if ([null, void 0].indexOf(c) >= 0) { return getColor("missing", u); }
+  // Else if the value is true, set to green.
+  else if (c === true) { return getColor("on", u); }
+  // Else if the value is false, set to red.
+  else if (c === false) { return getColor("off", u); }
+
+  var p = color(c);
+  // If the value is not a valid color string, use the color scale.
+  if (!p) { return getColor("scale", u)(c); }
+
+  return c.toString();
+
+}
