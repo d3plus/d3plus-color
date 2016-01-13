@@ -4,16 +4,21 @@
   "tagAnnotation": "v%s",
   "non-interactive": true,
   "verbose": true,
+  "src": {
+    "repo": "git@github.com:d3plus/d3plus-color.git"
+  },
   "dist": {
     "repo": "git@github.com:alexandersimoes/d3plus.git#gh-pages",
     "baseDir": "build",
     "files": ["*.js"],
-    "pkgFiles": []
+    "pkgFiles": [],
+    "afterReleaseCommand": "sudo rm -r .stage"
   },
   "github": {
     "releaseName": "v%s"
   },
   "npm": {
+    "publish": true,
     "forcePublishSourceRepo": true
   }
 }
