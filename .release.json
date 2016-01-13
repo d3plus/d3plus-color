@@ -4,13 +4,7 @@
   "tagName": "v%s",
   "tagAnnotation": "release v%s",
   "verbose": true,
-  "dist": {
-    "repo": "git@github.com:alexandersimoes/d3plus.git#gh-pages",
-    "baseDir": "build",
-    "stageDir": ".dist",
-    "files": ["*.js"],
-    "pkgFiles": []
-  },
+  "non-interactive": true,
   "github": {
     "release": true,
     "releaseName": "v%s"
