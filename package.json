@@ -40,7 +40,7 @@
     "pretest": "mkdir -p build && rollup -c",
     "dev": "npm run serve & nodemon --watch src/ -x \"npm run pretest\"",
     "docs": "jsdoc2md 'src/**/*.js' -t README.hbs > README.md",
-    "prepublish": "npm test && npm run docs && uglifyjs build/d3plus-color.js -c -m -o build/d3plus-color.min.js && rm -f build/d3plus-color.zip && zip -j build/d3plus-color.zip -- LICENSE README.md build/d3plus-color.js build/d3plus-color.min.js",
+    "prepublish": "npm run pretest && npm test && npm run docs && uglifyjs build/d3plus-color.js -c -m -o build/d3plus-color.min.js && rm -f build/d3plus-color.zip && zip -j build/d3plus-color.zip -- LICENSE README.md build/d3plus-color.js build/d3plus-color.min.js",
     "serve": "static -p 4000",
     "test": "eslint src/* test/unit/*.js && faucet ./test/unit/*.js"
   }
