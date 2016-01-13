@@ -10,8 +10,7 @@
     "baseDir": "build",
     "stageDir": ".dist",
     "files": ["*.js"],
-    "pkgFiles": [],
-    "afterReleaseCommand": "sudo rm -r .stage"
+    "pkgFiles": []
   },
   "github": {
     "release": true,
