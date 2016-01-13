@@ -1,15 +1,11 @@
 {
-  "buildCommand": "npm run prepublish",
-  "commitMessage": "release %s",
+  "buildCommand": "npm publish ./",
+  "changelogCommand": "git log --pretty=format:'* %s (%h)' v[REV_RANGE]",
+  "commitMessage": "release v%s",
   "tagName": "v%s",
   "tagAnnotation": "release v%s",
-  "verbose": true,
   "github": {
     "release": true,
     "releaseName": "v%s"
-  },
-  "npm": {
-    "publish": true,
-    "forcePublishSourceRepo": true
   }
 }
