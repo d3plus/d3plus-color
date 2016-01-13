@@ -1,8 +1,7 @@
 import {hsl} from "d3-color";
 
 /**
-    @module {Function} subtract
-    @name "d3plus.color.subtract(c1, c2[, o1, o2])"
+    @function subtract
     @desc Subtracts one color from another.
     @param {String} c1 The base color, a valid CSS color string.
     @param {String} c2 The color to remove from the base color, also a valid CSS color string.

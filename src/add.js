@@ -1,8 +1,7 @@
 import {hsl} from "d3-color";
 
 /**
-    @module {Function} add
-    @name "d3plus.color.add(c1, c2[, o1, o2])"
+    @function add
     @desc Adds two colors together.
     @param {String} c1 The first color, a valid CSS color string.
     @param {String} c2 The second color, also a valid CSS color string.

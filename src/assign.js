@@ -6,11 +6,10 @@ function getColor(k, u) {
 }
 
 /**
-    @module {Function} assign
-    @name "d3plus.color.assign(c[, u])"
+    @function assign
     @desc Assigns a color to a value using a predefined set of defaults.
     @param {String} c A valid CSS color string.
-    @param {Object} [u = d3plus.color.defaults] An object containing overrides of the default colors.
+    @param {Object} [u = defaults] An object containing overrides of the default colors.
     @returns {String}
 */
 export default function(c, u) {
