@@ -2,10 +2,9 @@
   "changelogCommand": "git log --pretty=format:'* %s (%h)' v0.2.0...HEAD",
   "commitMessage": "release v%s",
   "tagName": "v%s",
-  "tagAnnotation": "release v%s",
+  "tagAnnotation": "",
   "github": {
     "release": true,
-    "releaseName": "v%s",
-    "tokenRef": "GITHUB_TOKEN"
+    "releaseName": "v%s"
   }
 }
