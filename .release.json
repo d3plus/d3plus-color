@@ -3,12 +3,9 @@
   "commitMessage": "release v%s",
   "tagName": "v%s",
   "tagAnnotation": "release v%s",
-  "src": {
-    "beforeStageCommand": "npm run prepublish",
-    "afterReleaseCommand": "print 'Released!'"
-  },
   "github": {
     "release": true,
-    "releaseName": "v%s"
+    "releaseName": "v%s",
+    "tokenRef": "GITHUB_TOKEN"
   }
 }
