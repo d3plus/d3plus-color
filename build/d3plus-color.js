@@ -4,7 +4,7 @@
 	(factory((global.d3plus_color = {}),global.d3_color,global.d3_scale));
 }(this, function (exports,d3Color,d3Scale) { 'use strict';
 
-	var version = "0.2.1";
+	var version = "0.2.2";
 
 	/**
 	    @function add
