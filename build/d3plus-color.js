@@ -4,11 +4,10 @@
 	(factory((global.d3plus_color = {}),global.d3_color,global.d3_scale));
 }(this, function (exports,d3Color,d3Scale) { 'use strict';
 
-	var version = "0.2.0";
+	var version = "0.2.1";
 
 	/**
-	    @module {Function} add
-	    @name "d3plus.color.add(c1, c2[, o1, o2])"
+	    @function add
 	    @desc Adds two colors together.
 	    @param {String} c1 The first color, a valid CSS color string.
 	    @param {String} c2 The second color, also a valid CSS color string.
@@ -34,17 +33,16 @@
 
 	/**
 	    @module {Object} defaults
-	    @name "d3plus.color.defaults"
 	    @desc A set of default color values used when assigning colors based on data.
 	      *
 	      * | Name | Default | Description |
 	      * |---|---|---|
-	      * | dark | #444444 | Used in the contrast function when the color given is very light. |
-	      * | light | #f7f7f7 | Used in the contrast function when the color given is very dark. |
-	      * | missing | #cccccc | Used in the assign function when the value passed is `null` or `undefined`. |
-	      * | off | #b22200 | Used in the assign function when the value passed is `false`. |
-	      * | on | #224f20 | Used in the assign function when the value passed is `true`. |
-	      * | scale | `scale.ordinal().range([ "#b22200", "#eace3f", "#282f6b", "#b35c1e", "#224f20", "#5f487c", "#759143", "#419391", "#993c88", "#e89c89", "#ffee8d", "#afd5e8", "#f7ba77", "#a5c697", "#c5b5e5", "#d1d392", "#bbefd0", "#e099cf"])` | An ordinal scale used in the assign function for non-valid color strings and numbers. |
+	      * | dark | #444444 | Used in the [contrast](#contrast) function when the color given is very light. |
+	      * | light | #f7f7f7 | Used in the [contrast](#contrast) function when the color given is very dark. |
+	      * | missing | #cccccc | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
+	      * | off | #b22200 | Used in the [assign](#assign) function when the value passed is `false`. |
+	      * | on | #224f20 | Used in the [assign](#assign) function when the value passed is `true`. |
+	      * | scale | `scale.ordinal().range([ "#b22200", "#eace3f", "#282f6b", "#b35c1e", "#224f20", "#5f487c", "#759143", "#419391", "#993c88", "#e89c89", "#ffee8d", "#afd5e8", "#f7ba77", "#a5c697", "#c5b5e5", "#d1d392", "#bbefd0", "#e099cf"])` | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
 	*/
 	var defaults = {
 	  "dark": "#444444",
@@ -64,11 +62,10 @@
 	}
 
 	/**
-	    @module {Function} assign
-	    @name "d3plus.color.assign(c[, u])"
+	    @function assign
 	    @desc Assigns a color to a value using a predefined set of defaults.
 	    @param {String} c A valid CSS color string.
-	    @param {Object} [u = d3plus.color.defaults] An object containing overrides of the default colors.
+	    @param {Object} [u = defaults] An object containing overrides of the default colors.
 	    @returns {String}
 	*/
 	function assign(c, u) {
@@ -94,11 +91,10 @@
 	}
 
 	/**
-	    @module {Function} contrast
-	    @name "d3plus.color.contrast(c[, u])"
+	    @function contrast
 	    @desc A set of default color values used when assigning colors based on data.
 	    @param {String} c A valid CSS color string.
-	    @param {Object} [u = d3plus.color.defaults] An object containing overrides of the default colors.
+	    @param {Object} [u = defaults] An object containing overrides of the default colors.
 	    @returns {String}
 	*/
 	function contrast(c, u) {
@@ -109,8 +105,7 @@
 	}
 
 	/**
-	    @module {Function} legible
-	    @name "d3plus.color.legible(c)"
+	    @function legible
 	    @desc Darkens a color so that it will appear legible on a white background.
 	    @param {String} c A valid CSS color string.
 	    @returns {String}
@@ -125,8 +120,7 @@
 	}
 
 	/**
-	    @module {Function} lighter
-	    @name "d3plus.color.lighter(c[, i])"
+	    @function lighter
 	    @desc Similar to d3.color.brighter, except that this also reduces saturation so that colors don't appear neon.
 	    @param {String} c A valid CSS color string.
 	    @param {String} [i = 0.5] A value from 0 to 1 dictating the strength of the function.
@@ -142,8 +136,7 @@
 	}
 
 	/**
-	    @module {Function} subtract
-	    @name "d3plus.color.subtract(c1, c2[, o1, o2])"
+	    @function subtract
 	    @desc Subtracts one color from another.
 	    @param {String} c1 The base color, a valid CSS color string.
 	    @param {String} c2 The color to remove from the base color, also a valid CSS color string.
