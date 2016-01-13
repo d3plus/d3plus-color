@@ -14,7 +14,7 @@ If you use NPM, `npm install d3plus-color`. Otherwise, download the [latest rele
 ```html
 <script src="https://d3js.org/d3-color.v0.3.min.js"></script>
 <script src="https://d3js.org/d3-scale.v0.5.min.js"></script>
-<script src="https://d3plus.org/js/d3plus-color.v0.2.min.js"></script>
+<script src="https://d3plus.org/d3plus-color.min.js"></script>
 ```
 
 In a vanilla environment, a `d3plus_color` global is exported.
