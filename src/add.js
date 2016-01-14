@@ -9,9 +9,7 @@ import {hsl} from "d3-color";
     @param {String} [o2 = 1] Value from 0 to 1 of the first color's opacity.
     @returns {String}
 */
-export default function(c1, c2, o1, o2) {
-  if (o1 === void 0) o1 = 1;
-  if (o2 === void 0) o2 = 1;
+export default function(c1, c2, o1 = 1, o2 = 1) {
   c1 = hsl(c1);
   c2 = hsl(c2);
   let d = Math.abs(c2.h * o2 - c1.h * o1);

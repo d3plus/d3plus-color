@@ -8,9 +8,7 @@ import {getColor} from "./defaults";
     @param {Object} [u = defaults] An object containing overrides of the default colors.
     @returns {String}
 */
-export default function(c, u) {
-
-  if (u === void 0) u = {};
+export default function(c, u = {}) {
 
   // If the value is null or undefined, set to grey.
   if ([null, void 0].indexOf(c) >= 0) return getColor("missing", u);

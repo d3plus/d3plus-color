@@ -31,7 +31,7 @@ const defaults = {
     @private
     @returns {String}
 */
-export function getColor(k, u) {
+export function getColor(k, u = {}) {
   return k in u ? u[k] : defaults[k];
 }
 

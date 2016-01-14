@@ -7,8 +7,7 @@ import {hsl} from "d3-color";
     @param {String} [i = 0.5] A value from 0 to 1 dictating the strength of the function.
     @returns {String}
 */
-export default function(c, i) {
-  if (i === void 0) i = 0.5;
+export default function(c, i = 0.5) {
   c = hsl(c);
   i *= 1 - c.l;
   c.l += i;
