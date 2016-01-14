@@ -27,12 +27,15 @@
     "d3-scale": "^0.5.1"
   },
   "devDependencies": {
+    "babel-preset-es2015-rollup": "^1.1.1",
+    "babel-tape-runner": "1.2.0",
     "eslint": "^1.10.3",
     "faucet": "0.0.1",
     "jsdoc-to-markdown": "^1.3.3",
     "node-static": "^0.7.7",
     "nodemon": "^1.8.1",
     "rollup": "^0.24.1",
+    "rollup-plugin-babel": "^2.3.8",
     "rollup-plugin-json": "^2.0.0",
     "tape": "^4.4.0"
   },
@@ -42,6 +45,6 @@
     "docs": "jsdoc2md 'src/**/*.js' -t README.hbs > README.md",
     "prepublish": "npm test && npm run docs && uglifyjs build/d3plus-color.js -c -m -o build/d3plus-color.min.js && rm -f build/d3plus-color.zip && zip -j build/d3plus-color.zip -- LICENSE README.md build/d3plus-color.js build/d3plus-color.min.js",
     "serve": "static -p 4000",
-    "test": "eslint src/* test/unit/*.js && faucet ./test/unit/*.js"
+    "test": "eslint index.js src/* test/unit/*.js && babel-tape-runner ./test/unit/*.js | faucet"
   }
 }
