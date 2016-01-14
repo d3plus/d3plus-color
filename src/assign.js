@@ -1,9 +1,5 @@
 import {color} from "d3-color";
-import {default as defaults} from "./defaults";
-
-function getColor(k, u) {
-  return k in u ? u[k] : defaults[k];
-}
+import {getColor} from "./defaults";
 
 /**
     @function assign
@@ -13,18 +9,19 @@ function getColor(k, u) {
     @returns {String}
 */
 export default function(c, u) {
-  if (u === void 0) { u = {}; }
+
+  if (u === void 0) u = {};
 
   // If the value is null or undefined, set to grey.
-  if ([null, void 0].indexOf(c) >= 0) { return getColor("missing", u); }
+  if ([null, void 0].indexOf(c) >= 0) return getColor("missing", u);
   // Else if the value is true, set to green.
-  else if (c === true) { return getColor("on", u); }
+  else if (c === true) return getColor("on", u);
   // Else if the value is false, set to red.
-  else if (c === false) { return getColor("off", u); }
+  else if (c === false) return getColor("off", u);
 
-  var p = color(c);
+  const p = color(c);
   // If the value is not a valid color string, use the color scale.
-  if (!p) { return getColor("scale", u)(c); }
+  if (!p) return getColor("scale", u)(c);
 
   return c.toString();
 

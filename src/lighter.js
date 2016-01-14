@@ -8,9 +8,9 @@ import {hsl} from "d3-color";
     @returns {String}
 */
 export default function(c, i) {
-  if (i === void 0) { i = 0.5; }
+  if (i === void 0) i = 0.5;
   c = hsl(c);
-  i = (1 - c.l) * i;
+  i *= 1 - c.l;
   c.l += i;
   c.s -= i;
   return c.toString();

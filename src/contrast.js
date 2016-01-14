@@ -1,9 +1,5 @@
-import {default as defaults} from "./defaults";
+import {getColor} from "./defaults";
 import {rgb} from "d3-color";
-
-function getColor(k, u) {
-  return k in u ? u[k] : defaults[k];
-}
 
 /**
     @function contrast
@@ -13,8 +9,8 @@ function getColor(k, u) {
     @returns {String}
 */
 export default function(c, u) {
-  if (u === void 0) { u = {}; }
+  if (u === void 0) u = {};
   c = rgb(c);
-  var yiq = (c.r * 299 + c.g * 587 + c.b * 114) / 1000;
+  const yiq = (c.r * 299 + c.g * 587 + c.b * 114) / 1000;
   return yiq >= 128 ? getColor("dark", u) : getColor("light", u);
 }

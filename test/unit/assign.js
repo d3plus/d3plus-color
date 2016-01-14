@@ -1,23 +1,23 @@
-var color = require("../../build/d3plus-color"),
-    tape = require("tape");
+import {default as color} from "../../";
+import {test} from "tape";
 
-tape("parsing null values to grey", function(test){
-  test.equal(color.defaults.missing, color.assign(null), "null");
-  test.equal(color.defaults.missing, color.assign(undefined), "undefined");
-  test.end();
+test("parsing null values to grey", (assert) => {
+  assert.equal(color.defaults.missing, color.assign(null), "null");
+  assert.equal(color.defaults.missing, color.assign(undefined), "undefined");
+  assert.end();
 });
 
-tape("parsing booleans to red/green", function(test){
-  test.equal(color.defaults.on, color.assign(true), "true");
-  test.equal(color.defaults.off, color.assign(false), "false");
-  test.end();
+test("parsing booleans to red/green", (assert) => {
+  assert.equal(color.defaults.on, color.assign(true), "true");
+  assert.equal(color.defaults.off, color.assign(false), "false");
+  assert.end();
 });
 
-tape("mapping non-color values to a color scale", function(test){
-  var range = color.defaults.scale.range();
-  test.equal(range[0], color.assign("Alpha"));
-  test.equal(range[1], color.assign("Beta"));
-  test.equal(range[2], color.assign(45));
-  test.equal(range[3], color.assign(85.235));
-  test.end();
+test("mapping non-color values to a color scale", (assert) => {
+  const range = color.defaults.scale.range();
+  assert.equal(range[0], color.assign("Alpha"));
+  assert.equal(range[1], color.assign("Beta"));
+  assert.equal(range[2], color.assign(45));
+  assert.equal(range[3], color.assign(85.235));
+  assert.end();
 });
