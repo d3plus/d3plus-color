@@ -12,8 +12,13 @@ d3plus-color is a collection of color utility functions that build upon the popu
 If you use NPM, `npm install d3plus-color`. Otherwise, download the [latest release](https://github.com/d3plus/d3plus-color/releases/latest). The released bundle supports AMD, CommonJS, and vanilla environments. Create a custom build using [Rollup](https://github.com/rollup/rollup) or your preferred bundler. You can also load directly from [d3js.org](https://d3js.org) and [d3plus.org](https://d3plus.org):
 
 ```html
+<script src="https://d3js.org/d3-array.v0.7.min.js"></script>
+<script src="https://d3js.org/d3-collection.v0.1.min.js"></script>
 <script src="https://d3js.org/d3-color.v0.3.min.js"></script>
+<script src="https://d3js.org/d3-format.v0.5.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v0.4.min.js"></script>
 <script src="https://d3js.org/d3-scale.v0.5.min.js"></script>
+
 <script src="https://d3plus.org/js/d3plus-color.min.js"></script>
 ```
 
