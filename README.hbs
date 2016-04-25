@@ -7,22 +7,51 @@
 
 d3plus-color is a collection of color utility functions that build upon the popular [d3-color](https://github.com/d3/d3-color) library.
 
-## Installing
+## Installation Options
 
-If you use NPM, `npm install d3plus-color`. Otherwise, download the [latest release](https://github.com/d3plus/d3plus-color/releases/latest). The released bundle supports AMD, CommonJS, and vanilla environments. Create a custom build using [Rollup](https://github.com/rollup/rollup) or your preferred bundler. You can also load directly from [d3js.org](https://d3js.org) and [d3plus.org](https://d3plus.org):
+* [NPM](#install.npm)
+* [Browser](#install.browser)
+* [AMD and CommonJS](#install.amd)
+* [Custom Builds](#install.custom)
+
+<a name="install.npm"></a>
+### NPM
+```sh
+npm install d3plus-color
+```
+
+<a name="install.browser"></a>
+### Browser
+In a vanilla environment, a `d3plus_color` global is exported. To use a compiled version hosted on [d3plus.org](https://d3plus.org) that includes all dependencies:
+
+```html
+<script src="https://d3plus.org/js/d3plus-color.v0.3.full.min.js"></script>
+```
+
+For development purposes, you can also load all dependencies separately:
 
 ```html
 <script src="https://d3js.org/d3-array.v0.7.min.js"></script>
 <script src="https://d3js.org/d3-collection.v0.1.min.js"></script>
-<script src="https://d3js.org/d3-color.v0.3.min.js"></script>
+<script src="https://d3js.org/d3-color.v0.4.min.js"></script>
 <script src="https://d3js.org/d3-format.v0.5.min.js"></script>
-<script src="https://d3js.org/d3-interpolate.v0.4.min.js"></script>
-<script src="https://d3js.org/d3-scale.v0.5.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v0.7.min.js"></script>
+<script src="https://d3js.org/d3-time.v0.2.min.js"></script>
+<script src="https://d3js.org/d3-time-format.v0.3.min.js"></script>
+<script src="https://d3js.org/d3-scale.v0.6.min.js"></script>
 
-<script src="https://d3plus.org/js/d3plus-color.min.js"></script>
+<script src="https://d3plus.org/js/d3plus-color.v0.3.min.js"></script>
 ```
 
-In a vanilla environment, a `d3plus_color` global is exported.
+Otherwise, [click here](https://github.com/d3plus/d3plus-color/releases/latest) to download the latest release.
+
+<a name="install.amd"></a>
+### AMD and CommonJS
+The released bundle natively supports both AMD and CommonJS, and vanilla environments.
+
+<a name="install.custom"></a>
+### Custom Builds
+The source code is written using standard `import` and `export` statements. Create a custom build using [Rollup](https://github.com/rollup/rollup) or your preferred bundler. Take a look at the  [index.js](https://github.com/d3plus/d3plus-color/blob/master/index.js) file to see the modules exported.
 
 ---
 
