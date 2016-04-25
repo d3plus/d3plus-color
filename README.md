@@ -7,22 +7,51 @@
 
 d3plus-color is a collection of color utility functions that build upon the popular [d3-color](https://github.com/d3/d3-color) library.
 
-## Installing
+## Installation Options
 
-If you use NPM, `npm install d3plus-color`. Otherwise, download the [latest release](https://github.com/d3plus/d3plus-color/releases/latest). The released bundle supports AMD, CommonJS, and vanilla environments. Create a custom build using [Rollup](https://github.com/rollup/rollup) or your preferred bundler. You can also load directly from [d3js.org](https://d3js.org) and [d3plus.org](https://d3plus.org):
+* [NPM](#install.npm)
+* [Browser](#install.browser)
+* [AMD and CommonJS](#install.amd)
+* [Custom Builds](#install.custom)
+
+<a name="install.npm"></a>
+### NPM
+```sh
+npm install d3plus-color
+```
+
+<a name="install.browser"></a>
+### Browser
+In a vanilla environment, a `d3plus_color` global is exported. To use a compiled version hosted on [d3plus.org](https://d3plus.org) that includes all dependencies:
+
+```html
+<script src="https://d3plus.org/js/d3plus-color.v0.3.full.min.js"></script>
+```
+
+For development purposes, you can also load all dependencies separately:
 
 ```html
 <script src="https://d3js.org/d3-array.v0.7.min.js"></script>
 <script src="https://d3js.org/d3-collection.v0.1.min.js"></script>
-<script src="https://d3js.org/d3-color.v0.3.min.js"></script>
+<script src="https://d3js.org/d3-color.v0.4.min.js"></script>
 <script src="https://d3js.org/d3-format.v0.5.min.js"></script>
-<script src="https://d3js.org/d3-interpolate.v0.4.min.js"></script>
-<script src="https://d3js.org/d3-scale.v0.5.min.js"></script>
+<script src="https://d3js.org/d3-interpolate.v0.7.min.js"></script>
+<script src="https://d3js.org/d3-time.v0.2.min.js"></script>
+<script src="https://d3js.org/d3-time-format.v0.3.min.js"></script>
+<script src="https://d3js.org/d3-scale.v0.6.min.js"></script>
 
-<script src="https://d3plus.org/js/d3plus-color.min.js"></script>
+<script src="https://d3plus.org/js/d3plus-color.v0.3.min.js"></script>
 ```
 
-In a vanilla environment, a `d3plus_color` global is exported.
+Otherwise, [click here](https://github.com/d3plus/d3plus-color/releases/latest) to download the latest release.
+
+<a name="install.amd"></a>
+### AMD and CommonJS
+The released bundle natively supports both AMD and CommonJS, and vanilla environments.
+
+<a name="install.custom"></a>
+### Custom Builds
+The source code is written using standard `import` and `export` statements. Create a custom build using [Rollup](https://github.com/rollup/rollup) or your preferred bundler. Take a look at the  [index.js](https://github.com/d3plus/d3plus-color/blob/master/index.js) file to see the modules exported.
 
 ---
 
@@ -36,6 +65,7 @@ In a vanilla environment, a `d3plus_color` global is exported.
 * [defaults](#defaults) `[object Object]`
 
 <a name="add"></a>
+
 ## add(c1, c2, [o1], [o2]) ⇒ <code>String</code>
 Adds two colors together.
 
@@ -49,6 +79,7 @@ Adds two colors together.
 | [o2] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 
 <a name="assign"></a>
+
 ## assign(c, [u]) ⇒ <code>String</code>
 Assigns a color to a value using a predefined set of defaults.
 
@@ -60,6 +91,7 @@ Assigns a color to a value using a predefined set of defaults.
 | [u] | <code>Object</code> | <code>defaults</code> | An object containing overrides of the default colors. |
 
 <a name="contrast"></a>
+
 ## contrast(c, [u]) ⇒ <code>String</code>
 A set of default color values used when assigning colors based on data.
 
@@ -71,6 +103,7 @@ A set of default color values used when assigning colors based on data.
 | [u] | <code>Object</code> | <code>defaults</code> | An object containing overrides of the default colors. |
 
 <a name="legible"></a>
+
 ## legible(c) ⇒ <code>String</code>
 Darkens a color so that it will appear legible on a white background.
 
@@ -81,6 +114,7 @@ Darkens a color so that it will appear legible on a white background.
 | c | <code>String</code> | A valid CSS color string. |
 
 <a name="lighter"></a>
+
 ## lighter(c, [i]) ⇒ <code>String</code>
 Similar to d3.color.brighter, except that this also reduces saturation so that colors don't appear neon.
 
@@ -92,6 +126,7 @@ Similar to d3.color.brighter, except that this also reduces saturation so that c
 | [i] | <code>String</code> | <code>0.5</code> | A value from 0 to 1 dictating the strength of the function. |
 
 <a name="subtract"></a>
+
 ## subtract(c1, c2, [o1], [o2]) ⇒ <code>String</code>
 Subtracts one color from another.
 
@@ -108,6 +143,7 @@ Subtracts one color from another.
 ---
 
 <a name="module_defaults"></a>
+
 ## defaults : <code>Object</code>
 A set of default color values used when assigning colors based on data.
 
