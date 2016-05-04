@@ -32,7 +32,7 @@ const defaults = {
     @returns {String}
 */
 export function getColor(k, u = {}) {
-  return k in u ? u[k] : defaults[k];
+  return k in u ? u[k] : k in defaults ? defaults[k] : defaults.missing;
 }
 
 export default defaults;
