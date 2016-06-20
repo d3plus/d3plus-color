@@ -3,9 +3,8 @@
 [![NPM Release](http://img.shields.io/npm/v/d3plus-color.svg?style=flat-square)](https://www.npmjs.org/package/d3plus-color)
 [![Build Status](https://travis-ci.org/d3plus/d3plus-color.svg?branch=master)](https://travis-ci.org/d3plus/d3plus-color)
 [![Dependency Status](http://img.shields.io/david/d3plus/d3plus-color.svg?style=flat-square)](https://david-dm.org/d3plus/d3plus-color)
-[![Dependency Status](http://img.shields.io/david/dev/d3plus/d3plus-color.svg?style=flat-square)](https://david-dm.org/d3plus/d3plus-color#info=devDependencies)
 
-d3plus-color is a collection of color utility functions that build upon the popular [d3-color](https://github.com/d3/d3-color) library.
+Color functions that extent the ability of d3-color.
 
 ## Installation Options
 
@@ -25,44 +24,107 @@ npm install d3plus-color
 In a vanilla environment, a `d3plus_color` global is exported. To use a compiled version hosted on [d3plus.org](https://d3plus.org) that includes all dependencies:
 
 ```html
-<script src="https://d3plus.org/js/d3plus-color.v0.3.full.min.js"></script>
-```
-
-For development purposes, you can also load all dependencies separately:
-
-```html
-<script src="https://d3js.org/d3-array.v0.7.min.js"></script>
-<script src="https://d3js.org/d3-collection.v0.1.min.js"></script>
-<script src="https://d3js.org/d3-color.v0.4.min.js"></script>
-<script src="https://d3js.org/d3-format.v0.5.min.js"></script>
-<script src="https://d3js.org/d3-interpolate.v0.7.min.js"></script>
-<script src="https://d3js.org/d3-time.v0.2.min.js"></script>
-<script src="https://d3js.org/d3-time-format.v0.3.min.js"></script>
-<script src="https://d3js.org/d3-scale.v0.6.min.js"></script>
-
-<script src="https://d3plus.org/js/d3plus-color.v0.3.min.js"></script>
+<script src="https://d3plus.org/js/d3plus-color.v0.4.full.min.js"></script>
 ```
 
 Otherwise, [click here](https://github.com/d3plus/d3plus-color/releases/latest) to download the latest release.
 
 <a name="install.amd"></a>
 ### AMD and CommonJS
-The released bundle natively supports both AMD and CommonJS, and vanilla environments.
+The released bundle natively supports both AMD and CommonJS, in addition to vanilla environments.
 
 <a name="install.custom"></a>
 ### Custom Builds
-The source code is written using standard `import` and `export` statements. Create a custom build using [Rollup](https://github.com/rollup/rollup) or your preferred bundler. Take a look at the  [index.js](https://github.com/d3plus/d3plus-color/blob/master/index.js) file to see the modules exported.
+The source code is written using standard `import` and `export` statements. Create a custom build using [Rollup](https://github.com/rollup/rollup) or your preferred bundler. Take a look at the [index.js](https://github.com/d3plus/d3plus-color/blob/master/index.js) file to see the modules exported.
 
 ---
 
 # API Reference
-* [add](#add) `Function`
-* [assign](#assign) `Function`
-* [contrast](#contrast) `Function`
-* [legible](#legible) `Function`
-* [lighter](#lighter) `Function`
-* [subtract](#subtract) `Function`
-* [defaults](#defaults) `[object Object]`
+## Modules
+
+<dl>
+<dt><a href="#module_defaults">defaults</a> : <code>Object</code></dt>
+<dd><p>A set of default color values used when assigning colors based on data.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dark</td>
+<td>#444444</td>
+<td>Used in the <a href="#contrast">contrast</a> function when the color given is very light.</td>
+</tr>
+<tr>
+<td>light</td>
+<td>#f7f7f7</td>
+<td>Used in the <a href="#contrast">contrast</a> function when the color given is very dark.</td>
+</tr>
+<tr>
+<td>missing</td>
+<td>#cccccc</td>
+<td>Used in the <a href="#assign">assign</a> function when the value passed is <code>null</code> or <code>undefined</code>.</td>
+</tr>
+<tr>
+<td>off</td>
+<td>#b22200</td>
+<td>Used in the <a href="#assign">assign</a> function when the value passed is <code>false</code>.</td>
+</tr>
+<tr>
+<td>on</td>
+<td>#224f20</td>
+<td>Used in the <a href="#assign">assign</a> function when the value passed is <code>true</code>.</td>
+</tr>
+<tr>
+<td>scale</td>
+<td><code>scale.ordinal().range([ &quot;#b22200&quot;, &quot;#eace3f&quot;, &quot;#282f6b&quot;, &quot;#b35c1e&quot;, &quot;#224f20&quot;, &quot;#5f487c&quot;, &quot;#759143&quot;, &quot;#419391&quot;, &quot;#993c88&quot;, &quot;#e89c89&quot;, &quot;#ffee8d&quot;, &quot;#afd5e8&quot;, &quot;#f7ba77&quot;, &quot;#a5c697&quot;, &quot;#c5b5e5&quot;, &quot;#d1d392&quot;, &quot;#bbefd0&quot;, &quot;#e099cf&quot;])</code></td>
+<td>An ordinal scale used in the <a href="#assign">assign</a> function for non-valid color strings and numbers.</td>
+</tr>
+</tbody>
+</table>
+</dd>
+</dl>
+
+## Functions
+
+<dl>
+<dt><a href="#add">add(c1, c2, [o1], [o2])</a> ⇒ <code>String</code></dt>
+<dd><p>Adds two colors together.</p>
+</dd>
+<dt><a href="#assign">assign(c, [u])</a> ⇒ <code>String</code></dt>
+<dd><p>Assigns a color to a value using a predefined set of defaults.</p>
+</dd>
+<dt><a href="#contrast">contrast(c, [u])</a> ⇒ <code>String</code></dt>
+<dd><p>A set of default color values used when assigning colors based on data.</p>
+</dd>
+<dt><a href="#legible">legible(c)</a> ⇒ <code>String</code></dt>
+<dd><p>Darkens a color so that it will appear legible on a white background.</p>
+</dd>
+<dt><a href="#lighter">lighter(c, [i])</a> ⇒ <code>String</code></dt>
+<dd><p>Similar to d3.color.brighter, except that this also reduces saturation so that colors don&#39;t appear neon.</p>
+</dd>
+<dt><a href="#subtract">subtract(c1, c2, [o1], [o2])</a> ⇒ <code>String</code></dt>
+<dd><p>Subtracts one color from another.</p>
+</dd>
+</dl>
+
+<a name="module_defaults"></a>
+
+## defaults : <code>Object</code>
+A set of default color values used when assigning colors based on data.
+
+| Name | Default | Description |
+|---|---|---|
+| dark | #444444 | Used in the [contrast](#contrast) function when the color given is very light. |
+| light | #f7f7f7 | Used in the [contrast](#contrast) function when the color given is very dark. |
+| missing | #cccccc | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
+| off | #b22200 | Used in the [assign](#assign) function when the value passed is `false`. |
+| on | #224f20 | Used in the [assign](#assign) function when the value passed is `true`. |
+| scale | `scale.ordinal().range([ "#b22200", "#eace3f", "#282f6b", "#b35c1e", "#224f20", "#5f487c", "#759143", "#419391", "#993c88", "#e89c89", "#ffee8d", "#afd5e8", "#f7ba77", "#a5c697", "#c5b5e5", "#d1d392", "#bbefd0", "#e099cf"])` | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
 
 <a name="add"></a>
 
@@ -138,21 +200,4 @@ Subtracts one color from another.
 | c2 | <code>String</code> |  | The color to remove from the base color, also a valid CSS color string. |
 | [o1] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 | [o2] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
-
-
----
-
-<a name="module_defaults"></a>
-
-## defaults : <code>Object</code>
-A set of default color values used when assigning colors based on data.
-
-| Name | Default | Description |
-|---|---|---|
-| dark | #444444 | Used in the [contrast](#contrast) function when the color given is very light. |
-| light | #f7f7f7 | Used in the [contrast](#contrast) function when the color given is very dark. |
-| missing | #cccccc | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
-| off | #b22200 | Used in the [assign](#assign) function when the value passed is `false`. |
-| on | #224f20 | Used in the [assign](#assign) function when the value passed is `true`. |
-| scale | `scale.ordinal().range([ "#b22200", "#eace3f", "#282f6b", "#b35c1e", "#224f20", "#5f487c", "#759143", "#419391", "#993c88", "#e89c89", "#ffee8d", "#afd5e8", "#f7ba77", "#a5c697", "#c5b5e5", "#d1d392", "#bbefd0", "#e099cf"])` | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
 
