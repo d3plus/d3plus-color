@@ -1,5 +1,3 @@
-export {version} from "./package.json";
-
 export {default as add} from "./src/add";
 export {default as assign} from "./src/assign";
 export {default as contrast} from "./src/contrast";
