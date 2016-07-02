@@ -24,7 +24,7 @@ npm install d3plus-color
 In a vanilla environment, a `d3plus` global is exported. To use a compiled version hosted on [d3plus.org](https://d3plus.org) that includes all dependencies:
 
 ```html
-<script src="https://d3plus.org/js/d3plus-color.v0.4.full.min.js"></script>
+<script src="https://d3plus.org/js/d3plus-color.v0.5.full.min.js"></script>
 ```
 
 Otherwise, [click here](https://github.com/d3plus/d3plus-color/releases/latest) to download the latest release.
