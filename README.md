@@ -6,41 +6,17 @@
 
 Color functions that extent the ability of d3-color.
 
-## Installation Options
+## Installing
 
-* [NPM](#install.npm)
-* [Browser](#install.browser)
-* [AMD and CommonJS](#install.amd)
-* [Custom Builds](#install.custom)
-
-<a name="install.npm"></a>
-### NPM
-```sh
-npm install d3plus-color
-```
-
-<a name="install.browser"></a>
-### Browser
-In a vanilla environment, a `d3plus` global is exported. To use a compiled version hosted on [d3plus.org](https://d3plus.org) that includes all dependencies:
+If you use NPM, `npm install d3plus-color`. Otherwise, download the [latest release](https://github.com/d3plus/d3plus-color/releases/latest). The released bundle supports AMD, CommonJS, and vanilla environments. Create a [custom bundle using Rollup](https://github.com/rollup/rollup) or your preferred bundler. You can also load directly from [d3plus.org](https://d3plus.org):
 
 ```html
 <script src="https://d3plus.org/js/d3plus-color.v0.5.full.min.js"></script>
 ```
 
-Otherwise, [click here](https://github.com/d3plus/d3plus-color/releases/latest) to download the latest release.
 
-<a name="install.amd"></a>
-### AMD and CommonJS
-The released bundle natively supports both AMD and CommonJS, in addition to vanilla environments.
-
-<a name="install.custom"></a>
-### Custom Builds
-The source code is written using standard `import` and `export` statements. Create a custom build using [Rollup](https://github.com/rollup/rollup) or your preferred bundler. Take a look at the [index.js](https://github.com/d3plus/d3plus-color/blob/master/index.js) file to see the modules exported.
-
----
-
-# API Reference
-## Modules
+## API Reference
+### Modules
 
 <dl>
 <dt><a href="#module_defaults">defaults</a> : <code>Object</code></dt>
@@ -89,7 +65,7 @@ The source code is written using standard `import` and `export` statements. Crea
 </dd>
 </dl>
 
-## Functions
+### Functions
 
 <dl>
 <dt><a href="#add">add(c1, c2, [o1], [o2])</a> ⇒ <code>String</code></dt>
@@ -114,7 +90,7 @@ The source code is written using standard `import` and `export` statements. Crea
 
 <a name="module_defaults"></a>
 
-## defaults : <code>Object</code>
+### defaults : <code>Object</code>
 A set of default color values used when assigning colors based on data.
 
 | Name | Default | Description |
@@ -128,7 +104,7 @@ A set of default color values used when assigning colors based on data.
 
 <a name="add"></a>
 
-## add(c1, c2, [o1], [o2]) ⇒ <code>String</code>
+### add(c1, c2, [o1], [o2]) ⇒ <code>String</code>
 Adds two colors together.
 
 **Kind**: global function  
@@ -142,7 +118,7 @@ Adds two colors together.
 
 <a name="assign"></a>
 
-## assign(c, [u]) ⇒ <code>String</code>
+### assign(c, [u]) ⇒ <code>String</code>
 Assigns a color to a value using a predefined set of defaults.
 
 **Kind**: global function  
@@ -154,7 +130,7 @@ Assigns a color to a value using a predefined set of defaults.
 
 <a name="contrast"></a>
 
-## contrast(c, [u]) ⇒ <code>String</code>
+### contrast(c, [u]) ⇒ <code>String</code>
 A set of default color values used when assigning colors based on data.
 
 **Kind**: global function  
@@ -166,7 +142,7 @@ A set of default color values used when assigning colors based on data.
 
 <a name="legible"></a>
 
-## legible(c) ⇒ <code>String</code>
+### legible(c) ⇒ <code>String</code>
 Darkens a color so that it will appear legible on a white background.
 
 **Kind**: global function  
@@ -177,7 +153,7 @@ Darkens a color so that it will appear legible on a white background.
 
 <a name="lighter"></a>
 
-## lighter(c, [i]) ⇒ <code>String</code>
+### lighter(c, [i]) ⇒ <code>String</code>
 Similar to d3.color.brighter, except that this also reduces saturation so that colors don't appear neon.
 
 **Kind**: global function  
@@ -189,7 +165,7 @@ Similar to d3.color.brighter, except that this also reduces saturation so that c
 
 <a name="subtract"></a>
 
-## subtract(c1, c2, [o1], [o2]) ⇒ <code>String</code>
+### subtract(c1, c2, [o1], [o2]) ⇒ <code>String</code>
 Subtracts one color from another.
 
 **Kind**: global function  
@@ -201,3 +177,6 @@ Subtracts one color from another.
 | [o1] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 | [o2] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 
+
+
+###### <sub>Documentation generated on Fri, 22 Jul 2016 19:49:24 GMT</sub>
