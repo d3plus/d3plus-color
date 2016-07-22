@@ -2,7 +2,7 @@ import {default as contrast} from "../src/contrast.js";
 import {default as defaults} from "../src/defaults.js";
 import {test} from "tape";
 
-test("contrast", (assert) => {
+test("contrast", assert => {
   assert.true(defaults.light === contrast("#000") &&
               defaults.light === contrast("#777") &&
               defaults.light === contrast("#c00") &&

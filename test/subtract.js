@@ -1,7 +1,7 @@
 import {default as subtract} from "../src/subtract.js";
 import {test} from "tape";
 
-test("subtract", (assert) => {
+test("subtract", assert => {
   assert.equal("rgb(254, 255, 0)", subtract("#ff8000", "#ff0000"));
   assert.equal("rgb(254, 255, 0)", subtract("#00ff80", "#0000ff"));
   assert.equal("rgb(1, 0, 255)", subtract("#00ff80", "#ffff00"));

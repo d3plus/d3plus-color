@@ -2,7 +2,7 @@ import {default as assign} from "../src/assign.js";
 import {default as defaults} from "../src/defaults.js";
 import {test} from "tape";
 
-test("assign", (assert) => {
+test("assign", assert => {
   assert.equal(defaults.missing, assign(null), "null");
   assert.equal(defaults.missing, assign(undefined), "undefined");
 
