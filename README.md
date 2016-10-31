@@ -180,4 +180,4 @@ Subtracts one color from another.
 
 
 
-###### <sub>Documentation generated on Mon, 31 Oct 2016 20:12:00 GMT</sub>
+###### <sub>Documentation generated on Mon, 31 Oct 2016 20:30:46 GMT</sub>
