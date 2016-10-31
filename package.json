@@ -30,6 +30,7 @@
   "scripts": {
     "dev": "d3plus-dev",
     "docs": "d3plus-docs",
+    "env": "d3plus-env",
     "examples": "d3plus-examples",
     "release": "d3plus-release",
     "test": "d3plus-test"
