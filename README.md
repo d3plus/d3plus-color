@@ -1,8 +1,9 @@
 # d3plus-color
 
-[![NPM Release](http://img.shields.io/npm/v/d3plus-color.svg?style=flat-square)](https://www.npmjs.org/package/d3plus-color)
+[![NPM Release](http://img.shields.io/npm/v/d3plus-color.svg?style=flat)](https://www.npmjs.org/package/d3plus-color)
 [![Build Status](https://travis-ci.org/d3plus/d3plus-color.svg?branch=master)](https://travis-ci.org/d3plus/d3plus-color)
-[![Dependency Status](http://img.shields.io/david/d3plus/d3plus-color.svg?style=flat-square)](https://david-dm.org/d3plus/d3plus-color)
+[![Dependency Status](http://img.shields.io/david/d3plus/d3plus-color.svg?style=flat)](https://david-dm.org/d3plus/d3plus-color)
+[![Slack](https://img.shields.io/badge/Slack-Click%20to%20Join!-green.svg?style=social)](https://goo.gl/forms/ynrKdvusekAwRMPf2)
 
 Color functions that extent the ability of d3-color.
 
@@ -179,4 +180,4 @@ Subtracts one color from another.
 
 
 
-###### <sub>Documentation generated on Fri, 22 Jul 2016 19:49:24 GMT</sub>
+###### <sub>Documentation generated on Mon, 31 Oct 2016 20:12:00 GMT</sub>
