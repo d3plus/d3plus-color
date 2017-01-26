@@ -1,7 +1,7 @@
 import {scaleOrdinal} from "d3-scale";
 
 /**
-    @module {Object} defaults
+    @module {Object} colorDefaults
     @desc A set of default color values used when assigning colors based on data.
       *
       * | Name | Default | Description |
@@ -28,8 +28,8 @@ const defaults = {
 
 /**
     Returns a color based on a key, whether it is present in a user supplied object or in the default object.
-    @private
     @returns {String}
+    @private
 */
 export function getColor(k, u = {}) {
   return k in u ? u[k] : k in defaults ? defaults[k] : defaults.missing;

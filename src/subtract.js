@@ -1,7 +1,7 @@
 import {hsl} from "d3-color";
 
 /**
-    @function subtract
+    @function colorSubtract
     @desc Subtracts one color from another.
     @param {String} c1 The base color, a valid CSS color string.
     @param {String} c2 The color to remove from the base color, also a valid CSS color string.

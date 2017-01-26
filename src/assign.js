@@ -2,7 +2,7 @@ import {color} from "d3-color";
 import {getColor} from "./defaults";
 
 /**
-    @function assign
+    @function colorAssign
     @desc Assigns a color to a value using a predefined set of defaults.
     @param {String} c A valid CSS color string.
     @param {Object} [u = defaults] An object containing overrides of the default colors.

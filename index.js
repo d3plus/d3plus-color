@@ -1,7 +1,7 @@
-export {default as add} from "./src/add";
-export {default as assign} from "./src/assign";
-export {default as contrast} from "./src/contrast";
-export {default as defaults} from "./src/defaults";
-export {default as legible} from "./src/legible";
-export {default as lighter} from "./src/lighter";
-export {default as subtract} from "./src/subtract";
+export {default as colorAdd} from "./src/add";
+export {default as colorAssign} from "./src/assign";
+export {default as colorContrast} from "./src/contrast";
+export {default as colorDefaults} from "./src/defaults";
+export {default as colorLegible} from "./src/legible";
+export {default as colorLighter} from "./src/lighter";
+export {default as colorSubtract} from "./src/subtract";

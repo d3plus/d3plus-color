@@ -2,7 +2,7 @@ import {getColor} from "./defaults";
 import {rgb} from "d3-color";
 
 /**
-    @function contrast
+    @function colorContrast
     @desc A set of default color values used when assigning colors based on data.
     @param {String} c A valid CSS color string.
     @param {Object} [u = defaults] An object containing overrides of the default colors.

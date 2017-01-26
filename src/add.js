@@ -1,7 +1,7 @@
 import {hsl} from "d3-color";
 
 /**
-    @function add
+    @function colorAdd
     @desc Adds two colors together.
     @param {String} c1 The first color, a valid CSS color string.
     @param {String} c2 The second color, also a valid CSS color string.
