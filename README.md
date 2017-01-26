@@ -12,7 +12,7 @@ Color functions that extent the ability of d3-color.
 If you use NPM, `npm install d3plus-color`. Otherwise, download the [latest release](https://github.com/d3plus/d3plus-color/releases/latest). The released bundle supports AMD, CommonJS, and vanilla environments. Create a [custom bundle using Rollup](https://github.com/rollup/rollup) or your preferred bundler. You can also load directly from [d3plus.org](https://d3plus.org):
 
 ```html
-<script src="https://d3plus.org/js/d3plus-color.v0.5.full.min.js"></script>
+<script src="https://d3plus.org/js/d3plus-color.v0.6.full.min.js"></script>
 ```
 
 
@@ -20,7 +20,7 @@ If you use NPM, `npm install d3plus-color`. Otherwise, download the [latest rele
 ### Modules
 
 <dl>
-<dt><a href="#module_defaults">defaults</a> : <code>Object</code></dt>
+<dt><a href="#module_colorDefaults">colorDefaults</a> : <code>Object</code></dt>
 <dd><p>A set of default color values used when assigning colors based on data.</p>
 <table>
 <thead>
@@ -69,29 +69,29 @@ If you use NPM, `npm install d3plus-color`. Otherwise, download the [latest rele
 ### Functions
 
 <dl>
-<dt><a href="#add">add(c1, c2, [o1], [o2])</a> ⇒ <code>String</code></dt>
+<dt><a href="#colorAdd">colorAdd(c1, c2, [o1], [o2])</a> ⇒ <code>String</code></dt>
 <dd><p>Adds two colors together.</p>
 </dd>
-<dt><a href="#assign">assign(c, [u])</a> ⇒ <code>String</code></dt>
+<dt><a href="#colorAssign">colorAssign(c, [u])</a> ⇒ <code>String</code></dt>
 <dd><p>Assigns a color to a value using a predefined set of defaults.</p>
 </dd>
-<dt><a href="#contrast">contrast(c, [u])</a> ⇒ <code>String</code></dt>
+<dt><a href="#colorContrast">colorContrast(c, [u])</a> ⇒ <code>String</code></dt>
 <dd><p>A set of default color values used when assigning colors based on data.</p>
 </dd>
-<dt><a href="#legible">legible(c)</a> ⇒ <code>String</code></dt>
+<dt><a href="#colorLegible">colorLegible(c)</a> ⇒ <code>String</code></dt>
 <dd><p>Darkens a color so that it will appear legible on a white background.</p>
 </dd>
-<dt><a href="#lighter">lighter(c, [i])</a> ⇒ <code>String</code></dt>
+<dt><a href="#colorLighter">colorLighter(c, [i])</a> ⇒ <code>String</code></dt>
 <dd><p>Similar to d3.color.brighter, except that this also reduces saturation so that colors don&#39;t appear neon.</p>
 </dd>
-<dt><a href="#subtract">subtract(c1, c2, [o1], [o2])</a> ⇒ <code>String</code></dt>
+<dt><a href="#colorSubtract">colorSubtract(c1, c2, [o1], [o2])</a> ⇒ <code>String</code></dt>
 <dd><p>Subtracts one color from another.</p>
 </dd>
 </dl>
 
-<a name="module_defaults"></a>
+<a name="module_colorDefaults"></a>
 
-### defaults : <code>Object</code>
+### colorDefaults : <code>Object</code>
 A set of default color values used when assigning colors based on data.
 
 | Name | Default | Description |
@@ -103,9 +103,9 @@ A set of default color values used when assigning colors based on data.
 | on | #224f20 | Used in the [assign](#assign) function when the value passed is `true`. |
 | scale | `scale.ordinal().range([ "#b22200", "#eace3f", "#282f6b", "#b35c1e", "#224f20", "#5f487c", "#759143", "#419391", "#993c88", "#e89c89", "#ffee8d", "#afd5e8", "#f7ba77", "#a5c697", "#c5b5e5", "#d1d392", "#bbefd0", "#e099cf"])` | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
 
-<a name="add"></a>
+<a name="colorAdd"></a>
 
-### add(c1, c2, [o1], [o2]) ⇒ <code>String</code>
+### colorAdd(c1, c2, [o1], [o2]) ⇒ <code>String</code>
 Adds two colors together.
 
 **Kind**: global function  
@@ -117,9 +117,9 @@ Adds two colors together.
 | [o1] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 | [o2] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 
-<a name="assign"></a>
+<a name="colorAssign"></a>
 
-### assign(c, [u]) ⇒ <code>String</code>
+### colorAssign(c, [u]) ⇒ <code>String</code>
 Assigns a color to a value using a predefined set of defaults.
 
 **Kind**: global function  
@@ -129,9 +129,9 @@ Assigns a color to a value using a predefined set of defaults.
 | c | <code>String</code> |  | A valid CSS color string. |
 | [u] | <code>Object</code> | <code>defaults</code> | An object containing overrides of the default colors. |
 
-<a name="contrast"></a>
+<a name="colorContrast"></a>
 
-### contrast(c, [u]) ⇒ <code>String</code>
+### colorContrast(c, [u]) ⇒ <code>String</code>
 A set of default color values used when assigning colors based on data.
 
 **Kind**: global function  
@@ -141,9 +141,9 @@ A set of default color values used when assigning colors based on data.
 | c | <code>String</code> |  | A valid CSS color string. |
 | [u] | <code>Object</code> | <code>defaults</code> | An object containing overrides of the default colors. |
 
-<a name="legible"></a>
+<a name="colorLegible"></a>
 
-### legible(c) ⇒ <code>String</code>
+### colorLegible(c) ⇒ <code>String</code>
 Darkens a color so that it will appear legible on a white background.
 
 **Kind**: global function  
@@ -152,9 +152,9 @@ Darkens a color so that it will appear legible on a white background.
 | --- | --- | --- |
 | c | <code>String</code> | A valid CSS color string. |
 
-<a name="lighter"></a>
+<a name="colorLighter"></a>
 
-### lighter(c, [i]) ⇒ <code>String</code>
+### colorLighter(c, [i]) ⇒ <code>String</code>
 Similar to d3.color.brighter, except that this also reduces saturation so that colors don't appear neon.
 
 **Kind**: global function  
@@ -164,9 +164,9 @@ Similar to d3.color.brighter, except that this also reduces saturation so that c
 | c | <code>String</code> |  | A valid CSS color string. |
 | [i] | <code>String</code> | <code>0.5</code> | A value from 0 to 1 dictating the strength of the function. |
 
-<a name="subtract"></a>
+<a name="colorSubtract"></a>
 
-### subtract(c1, c2, [o1], [o2]) ⇒ <code>String</code>
+### colorSubtract(c1, c2, [o1], [o2]) ⇒ <code>String</code>
 Subtracts one color from another.
 
 **Kind**: global function  
@@ -180,4 +180,4 @@ Subtracts one color from another.
 
 
 
-###### <sub>Documentation generated on Mon, 31 Oct 2016 20:30:46 GMT</sub>
+###### <sub>Documentation generated on Thu, 26 Jan 2017 15:20:08 GMT</sub>
