@@ -1,9 +1,11 @@
+import zora from "zora";
 import {default as contrast} from "../src/contrast.js";
 import {default as defaults} from "../src/defaults.js";
-import {test} from "tape";
 
-test("contrast", assert => {
-  assert.true(defaults.light === contrast("#000") &&
+export default zora()
+  .test("contrast", assert => {
+
+    assert.ok(defaults.light === contrast("#000") &&
               defaults.light === contrast("#777") &&
               defaults.light === contrast("#c00") &&
               defaults.light === contrast("#0b0") &&
@@ -13,7 +15,7 @@ test("contrast", assert => {
               defaults.light === contrast("#c0c"), "light");
 
 
-  assert.true(defaults.dark === contrast("#fff") &&
+    assert.ok(defaults.dark === contrast("#fff") &&
               defaults.dark === contrast("#888") &&
               defaults.dark === contrast("#fcc") &&
               defaults.dark === contrast("#8c8") &&
@@ -21,5 +23,4 @@ test("contrast", assert => {
               defaults.dark === contrast("#0bb") &&
               defaults.dark === contrast("#fcf"), "dark");
 
-  assert.end();
-});
+  });
