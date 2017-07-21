@@ -17,7 +17,7 @@ export default function(c1, c2, o1 = 1, o2 = 1) {
   let h = (c1.h - d) % 360;
   const l = c1.l - (c2.l * o2 - c1.l * o1) / 2,
         s = c1.s - (c2.s * o2 - c1.s * o1) / 2;
-      // a = o1 - (o2 - o1) / 2;
+  // a = o1 - (o2 - o1) / 2;
   if (h < 0) h += 360;
   return hsl(`hsl(${h},${s * 100}%,${l * 100}%)`).toString();
   // return hsl(`hsl(${h},${s * 100}%,${l * 100}%,${a})`).toString();
