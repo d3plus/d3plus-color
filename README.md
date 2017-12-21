@@ -15,19 +15,7 @@ If you use NPM, run `npm install d3plus-color --save`. Otherwise, download the [
 
 ## API Reference
 
-##### Scripts
-* [colorDefaults](#module_colorDefaults) - A set of default color values used when assigning colors based on data.
-
-| Name | Default | Description |
-|---|---|---|
-| dark | #444444 | Used in the [contrast](#contrast) function when the color given is very light. |
-| light | #f7f7f7 | Used in the [contrast](#contrast) function when the color given is very dark. |
-| missing | #cccccc | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
-| off | #b22200 | Used in the [assign](#assign) function when the value passed is `false`. |
-| on | #224f20 | Used in the [assign](#assign) function when the value passed is `true`. |
-| scale | `scale.ordinal().range([ "#b22200", "#eace3f", "#282f6b", "#b35c1e", "#224f20", "#5f487c", "#759143", "#419391", "#993c88", "#e89c89", "#ffee8d", "#afd5e8", "#f7ba77", "#a5c697", "#c5b5e5", "#d1d392", "#bbefd0", "#e099cf"])` | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
-
-##### Functions
+##### 
 * [colorAdd](#colorAdd) - Adds two colors together.
 * [colorAssign](#colorAssign) - Assigns a color to a value using a predefined set of defaults.
 * [colorContrast](#colorContrast) - A set of default color values used when assigning colors based on data.
@@ -35,12 +23,8 @@ If you use NPM, run `npm install d3plus-color --save`. Otherwise, download the [
 * [colorLighter](#colorLighter) - Similar to d3.color.brighter, except that this also reduces saturation so that colors don't appear neon.
 * [colorSubtract](#colorSubtract) - Subtracts one color from another.
 
----
-
-<a name="module_colorDefaults"></a>
-#### **colorDefaults** [<>](https://github.com/d3plus/d3plus-color/blob/master/src/defaults.js#L3)
-
-A set of default color values used when assigning colors based on data.
+##### 
+* [colorDefaults](#colorDefaults) - A set of default color values used when assigning colors based on data.
 
 | Name | Default | Description |
 |---|---|---|
@@ -49,10 +33,7 @@ A set of default color values used when assigning colors based on data.
 | missing | #cccccc | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
 | off | #b22200 | Used in the [assign](#assign) function when the value passed is `false`. |
 | on | #224f20 | Used in the [assign](#assign) function when the value passed is `true`. |
-| scale | `scale.ordinal().range([ "#b22200", "#eace3f", "#282f6b", "#b35c1e", "#224f20", "#5f487c", "#759143", "#419391", "#993c88", "#e89c89", "#ffee8d", "#afd5e8", "#f7ba77", "#a5c697", "#c5b5e5", "#d1d392", "#bbefd0", "#e099cf"])` | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
-
-
-This is a script accessible from the node environment.
+| scale | #b22200, #eace3f, #282f6b, #b35c1e, #224f20, #5f487c, #759143, #419391, #993c88, #e89c89, #ffee8d, #afd5e8, #f7ba77, #a5c697, #c5b5e5, #d1d392, #bbefd0, #e099cf | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
 
 ---
 
@@ -64,13 +45,13 @@ Adds two colors together.
 
 This is a global function.
 
-
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | c1 | <code>String</code> |  | The first color, a valid CSS color string. |
 | c2 | <code>String</code> |  | The second color, also a valid CSS color string. |
 | [o1] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 | [o2] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
+
 
 ---
 
@@ -82,11 +63,11 @@ Assigns a color to a value using a predefined set of defaults.
 
 This is a global function.
 
-
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | c | <code>String</code> |  | A valid CSS color string. |
 | [u] | <code>Object</code> | <code>defaults</code> | An object containing overrides of the default colors. |
+
 
 ---
 
@@ -98,11 +79,11 @@ A set of default color values used when assigning colors based on data.
 
 This is a global function.
 
-
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | c | <code>String</code> |  | A valid CSS color string. |
 | [u] | <code>Object</code> | <code>defaults</code> | An object containing overrides of the default colors. |
+
 
 ---
 
@@ -124,11 +105,11 @@ Similar to d3.color.brighter, except that this also reduces saturation so that c
 
 This is a global function.
 
-
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | c | <code>String</code> |  | A valid CSS color string. |
 | [i] | <code>String</code> | <code>0.5</code> | A value from 0 to 1 dictating the strength of the function. |
+
 
 ---
 
@@ -140,7 +121,6 @@ Subtracts one color from another.
 
 This is a global function.
 
-
 | Param | Type | Default | Description |
 | --- | --- | --- | --- |
 | c1 | <code>String</code> |  | The base color, a valid CSS color string. |
@@ -148,6 +128,28 @@ This is a global function.
 | [o1] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 | [o2] | <code>String</code> | <code>1</code> | Value from 0 to 1 of the first color's opacity. |
 
+
 ---
 
-###### <sub>Documentation generated on Fri, 26 May 2017 19:50:04 GMT</sub>
+<a name="colorDefaults"></a>
+#### **colorDefaults** [<>](https://github.com/d3plus/d3plus-color/blob/master/src/defaults.js#L3)
+
+A set of default color values used when assigning colors based on data.
+
+| Name | Default | Description |
+|---|---|---|
+| dark | #444444 | Used in the [contrast](#contrast) function when the color given is very light. |
+| light | #f7f7f7 | Used in the [contrast](#contrast) function when the color given is very dark. |
+| missing | #cccccc | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
+| off | #b22200 | Used in the [assign](#assign) function when the value passed is `false`. |
+| on | #224f20 | Used in the [assign](#assign) function when the value passed is `true`. |
+| scale | #b22200, #eace3f, #282f6b, #b35c1e, #224f20, #5f487c, #759143, #419391, #993c88, #e89c89, #ffee8d, #afd5e8, #f7ba77, #a5c697, #c5b5e5, #d1d392, #bbefd0, #e099cf | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
+
+
+This is a global namespace.
+
+---
+
+
+
+###### <sub>Documentation generated on Thu, 21 Dec 2017 20:47:44 GMT</sub>
