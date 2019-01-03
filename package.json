@@ -1,6 +1,6 @@
 {
   "name": "d3plus-color",
-  "version": "0.6.2",
+  "version": "0.6.3",
   "description": "Color functions that extent the ability of d3-color.",
   "main": "build/d3plus-color.js",
   "jsnext:main": "es/index",
