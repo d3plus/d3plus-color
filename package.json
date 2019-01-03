@@ -39,6 +39,7 @@
     "d3plus-dev": "^0.6.3"
   },
   "module": "es/index",
+  "sideEffects": false,
   "files": [
     "bin",
     "build/d3plus-color.js",
