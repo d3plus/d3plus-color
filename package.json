@@ -24,7 +24,7 @@
   },
   "dependencies": {
     "d3-color": "^1.2.3",
-    "d3-scale": "^2.2.2",
+    "d3-scale": "^3.0.0",
     "d3plus-common": "^0.6.45"
   },
   "scripts": {
