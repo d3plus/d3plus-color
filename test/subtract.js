@@ -1,4 +1,4 @@
-import test from "zora";
+import {test} from "zora";
 import {default as subtract} from "../src/subtract.js";
 
 test("subtract", assert => {

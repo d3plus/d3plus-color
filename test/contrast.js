@@ -1,4 +1,4 @@
-import test from "zora";
+import {test} from "zora";
 import {default as contrast} from "../src/contrast.js";
 import {default as defaults} from "../src/defaults.js";
 
