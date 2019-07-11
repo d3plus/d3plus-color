@@ -25,7 +25,7 @@
   "dependencies": {
     "d3-color": "^1.2.8",
     "d3-scale": "^2.2.2",
-    "d3plus-common": "^0.6.50"
+    "d3plus-common": "^0.6.51"
   },
   "scripts": {
     "build": "d3plus-build",
@@ -37,7 +37,7 @@
     "test": "d3plus-test"
   },
   "devDependencies": {
-    "d3plus-dev": "^0.7.1"
+    "d3plus-dev": "^0.7.2"
   },
   "module": "es/index",
   "sideEffects": false,
