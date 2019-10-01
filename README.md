@@ -152,4 +152,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Thu, 11 Jul 2019 13:07:51 GMT</sub>
+###### <sub>Documentation generated on Tue, 01 Oct 2019 16:33:03 GMT</sub>
