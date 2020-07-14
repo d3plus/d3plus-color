@@ -9,7 +9,7 @@ Color functions that extent the ability of d3-color.
 If you use NPM, run `npm install d3plus-color --save`. Otherwise, download the [latest release](https://github.com/d3plus/d3plus-color/releases/latest). The released bundle supports AMD, CommonJS, and vanilla environments. You can also load directly from [d3plus.org](https://d3plus.org):
 
 ```html
-<script src="https://d3plus.org/js/d3plus-color.v0.6.full.min.js"></script>
+<script src="https://d3plus.org/js/d3plus-color.v0.7.full.min.js"></script>
 ```
 
 
@@ -152,4 +152,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Tue, 01 Oct 2019 16:33:03 GMT</sub>
+###### <sub>Documentation generated on Tue, 14 Jul 2020 20:30:19 GMT</sub>
