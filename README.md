@@ -1,15 +1,18 @@
 # d3plus-color
 
-[![NPM Release](http://img.shields.io/npm/v/d3plus-color.svg?style=flat)](https://www.npmjs.org/package/d3plus-color) [![Build Status](https://travis-ci.org/d3plus/d3plus-color.svg?branch=master)](https://travis-ci.org/d3plus/d3plus-color) [![Dependency Status](http://img.shields.io/david/d3plus/d3plus-color.svg?style=flat)](https://david-dm.org/d3plus/d3plus-color) [![Gitter](https://img.shields.io/badge/-chat_on_gitter-brightgreen.svg?style=flat&logo=gitter-white)](https://gitter.im/d3plus/) 
+[![NPM Release](http://img.shields.io/npm/v/d3plus-color.svg?style=flat)](https://www.npmjs.org/package/d3plus-color) [![Build Status](https://travis-ci.org/d3plus/d3plus-color.svg?branch=master)](https://travis-ci.org/d3plus/d3plus-color) [![Dependency Status](http://img.shields.io/david/d3plus/d3plus-color.svg?style=flat)](https://david-dm.org/d3plus/d3plus-color) [![Gitter](https://img.shields.io/badge/-chat_on_gitter-brightgreen.svg?style=flat&logo=gitter-white)](https://gitter.im/d3plus/)
 
 Color functions that extent the ability of d3-color.
 
 ## Installing
 
-If you use NPM, run `npm install d3plus-color --save`. Otherwise, download the [latest release](https://github.com/d3plus/d3plus-color/releases/latest). The released bundle supports AMD, CommonJS, and vanilla environments. You can also load directly from [d3plus.org](https://d3plus.org):
+If you use NPM, `npm install d3plus-color`. Otherwise, download the [latest release](https://github.com/d3plus/d3plus-color/releases/latest). You can also load d3plus-color as a standalone library or as part of [D3plus](https://github.com/d3plus/d3plus). ES modules, AMD, CommonJS, and vanilla environments are supported. In vanilla, a `d3plus` global is exported:
 
 ```html
-<script src="https://d3plus.org/js/d3plus-color.v0.7.full.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/d3plus-color@1"></script>
+<script>
+  console.log(d3plus);
+</script>
 ```
 
 
@@ -28,12 +31,12 @@ If you use NPM, run `npm install d3plus-color --save`. Otherwise, download the [
 
 | Name | Default | Description |
 |---|---|---|
-| dark | #444444 | Used in the [contrast](#contrast) function when the color given is very light. |
-| light | #f7f7f7 | Used in the [contrast](#contrast) function when the color given is very dark. |
-| missing | #cccccc | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
-| off | #b22200 | Used in the [assign](#assign) function when the value passed is `false`. |
-| on | #224f20 | Used in the [assign](#assign) function when the value passed is `true`. |
-| scale | #b22200, #eace3f, #282f6b, #b35c1e, #224f20, #5f487c, #759143, #419391, #993c88, #e89c89, #ffee8d, #afd5e8, #f7ba77, #a5c697, #c5b5e5, #d1d392, #bbefd0, #e099cf | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
+| dark | "#555555" | Used in the [contrast](#contrast) function when the color given is very light. |
+| light | "#f7f7f7" | Used in the [contrast](#contrast) function when the color given is very dark. |
+| missing | "#cccccc" | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
+| off | "#C44536" | Used in the [assign](#assign) function when the value passed is `false`. |
+| on | "#6A994E" | Used in the [assign](#assign) function when the value passed is `true`. |
+| scale | "#4281A4", "#F6AE2D", "#C44536", "#2A9D8F", "#6A994E", "#CEB54A", "#5E548E", "#C08497", "#99582A", "#8C8C99", "#1D3557", "#D08C60", "#6D2E46", "#8BB19C", "#52796F", "#5E60CE", "#985277", "#5C374C" | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
 
 ---
 
@@ -138,12 +141,12 @@ A set of default color values used when assigning colors based on data.
 
 | Name | Default | Description |
 |---|---|---|
-| dark | #444444 | Used in the [contrast](#contrast) function when the color given is very light. |
-| light | #f7f7f7 | Used in the [contrast](#contrast) function when the color given is very dark. |
-| missing | #cccccc | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
-| off | #b22200 | Used in the [assign](#assign) function when the value passed is `false`. |
-| on | #224f20 | Used in the [assign](#assign) function when the value passed is `true`. |
-| scale | #b22200, #eace3f, #282f6b, #b35c1e, #224f20, #5f487c, #759143, #419391, #993c88, #e89c89, #ffee8d, #afd5e8, #f7ba77, #a5c697, #c5b5e5, #d1d392, #bbefd0, #e099cf | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
+| dark | "#555555" | Used in the [contrast](#contrast) function when the color given is very light. |
+| light | "#f7f7f7" | Used in the [contrast](#contrast) function when the color given is very dark. |
+| missing | "#cccccc" | Used in the [assign](#assign) function when the value passed is `null` or `undefined`. |
+| off | "#C44536" | Used in the [assign](#assign) function when the value passed is `false`. |
+| on | "#6A994E" | Used in the [assign](#assign) function when the value passed is `true`. |
+| scale | "#4281A4", "#F6AE2D", "#C44536", "#2A9D8F", "#6A994E", "#CEB54A", "#5E548E", "#C08497", "#99582A", "#8C8C99", "#1D3557", "#D08C60", "#6D2E46", "#8BB19C", "#52796F", "#5E60CE", "#985277", "#5C374C" | An ordinal scale used in the [assign](#assign) function for non-valid color strings and numbers. |
 
 
 This is a global namespace.
@@ -152,4 +155,4 @@ This is a global namespace.
 
 
 
-###### <sub>Documentation generated on Tue, 14 Jul 2020 20:30:19 GMT</sub>
+###### <sub>Documentation generated on Tue, 02 Feb 2021 14:25:49 GMT</sub>
