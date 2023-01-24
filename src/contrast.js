@@ -1,4 +1,4 @@
-import {getColor} from "./defaults";
+import {getColor} from "./defaults.js";
 import {rgb} from "d3-color";
 
 /**

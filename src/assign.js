@@ -1,5 +1,5 @@
 import {color} from "d3-color";
-import {getColor} from "./defaults";
+import {getColor} from "./defaults.js";
 
 /**
     @function colorAssign

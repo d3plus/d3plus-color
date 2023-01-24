@@ -1,8 +1,8 @@
-import {test} from "zora";
+import assert from "assert";
 import {default as contrast} from "../src/contrast.js";
 import {default as defaults} from "../src/defaults.js";
 
-test("contrast", assert => {
+it("contrast", () => {
 
   assert.ok(defaults.light === contrast("#000") &&
             defaults.light === contrast("#777") &&
@@ -24,4 +24,3 @@ test("contrast", assert => {
 
 });
 
-export default test;

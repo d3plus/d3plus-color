@@ -31,12 +31,11 @@
     "dev": "d3plus-dev",
     "docs": "d3plus-docs",
     "env": "d3plus-env",
-    "examples": "d3plus-examples",
     "release": "d3plus-release",
-    "test": "d3plus-test"
+    "test": "eslint src test && mocha 'test/**/*-test.js'"
   },
   "devDependencies": {
-    "d3plus-dev": "^1.2.3"
+    "d3plus-dev": "^1.2.4"
   },
   "module": "es/index",
   "sideEffects": false,
@@ -46,5 +45,6 @@
     "build/d3plus-color.js.map",
     "build/d3plus-color.min.js",
     "es"
-  ]
+  ],
+  "type": "module"
 }
