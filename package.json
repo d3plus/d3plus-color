@@ -2,7 +2,7 @@
   "name": "d3plus-color",
   "version": "1.1.1",
   "description": "Color functions that extent the ability of d3-color.",
-  "main": "build/d3plus-color.full.js",
+  "main": "es/index.js",
   "jsnext:main": "es/index",
   "license": "MIT",
   "homepage": "https://d3plus.org",
@@ -35,9 +35,9 @@
     "test": "eslint src test && mocha 'test/**/*-test.js'"
   },
   "devDependencies": {
-    "d3plus-dev": "^1.2.4"
+    "d3plus-dev": "^1.2.8"
   },
-  "module": "es/index",
+  "module": "es/index.js",
   "sideEffects": false,
   "files": [
     "bin",
@@ -46,5 +46,7 @@
     "build/d3plus-color.min.js",
     "es"
   ],
-  "type": "module"
+  "type": "module",
+  "jsdelivr": "build/d3plus-color.full.min.js",
+  "unpkg": "build/d3plus-color.full.min.js"
 }
